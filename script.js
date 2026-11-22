@@ -23,20 +23,26 @@
     revealElements.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // 2. Subtle 3D Tilt on the Floating Profile Card
+  // 2. Smooth 3D Tilt on the Floating Profile Card
   const profileCard = document.getElementById('profile-card');
-  if (profileCard && !prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
-    profileCard.addEventListener('mousemove', (event) => {
+  if (profileCard && !prefersReducedMotion) {
+    profileCard.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
       const rect = profileCard.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      const rotateY = (x * 7).toFixed(2);
-      const rotateX = (-y * 7).toFixed(2);
-      profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      const px = (event.clientX - rect.left) / rect.width;
+      const py = (event.clientY - rect.top) / rect.height;
+      const rotateY = ((px - 0.5) * 16).toFixed(2);
+      const rotateX = ((0.5 - py) * 16).toFixed(2);
+
+      profileCard.classList.add('is-tilting');
+      profileCard.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
+      profileCard.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
+      profileCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
     });
 
-    profileCard.addEventListener('mouseleave', () => {
-      profileCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    profileCard.addEventListener('pointerleave', () => {
+      profileCard.classList.remove('is-tilting');
+      profileCard.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     });
   }
 
