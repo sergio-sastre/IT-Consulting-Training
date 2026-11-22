@@ -333,7 +333,7 @@ button {
   max-width: 370px;
   width: 100%;
   margin-inline: auto;
-  transition: transform 420ms var(--ease-out), box-shadow 300ms var(--ease-out);
+  transition: box-shadow 350ms var(--ease-out);
   will-change: transform;
 }
 
@@ -348,11 +348,10 @@ button {
     rgba(255, 255, 255, 0.18),
     transparent 70%
   );
-  transition: opacity 220ms ease;
+  transition: opacity 320ms ease;
 }
 
 .profile-card.is-tilting {
-  transition: transform 60ms linear, box-shadow 200ms ease;
   box-shadow:
     0 34px 68px -18px rgba(19, 80, 56, 0.45),
     0 8px 20px rgba(17, 24, 39, 0.14);

@@ -23,26 +23,70 @@
     revealElements.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // 2. Smooth 3D Tilt on the Floating Profile Card
+  // 2. Silky-Smooth 3D Tilt on the Floating Profile Card (rAF lerp)
   const profileCard = document.getElementById('profile-card');
   if (profileCard && !prefersReducedMotion) {
+    let targetX = 0;
+    let targetY = 0;
+    let targetScale = 1;
+    let currentX = 0;
+    let currentY = 0;
+    let currentScale = 1;
+    let rafId = null;
+
+    const ease = 0.1;
+
+    function animateTilt() {
+      currentX += (targetX - currentX) * ease;
+      currentY += (targetY - currentY) * ease;
+      currentScale += (targetScale - currentScale) * ease;
+
+      profileCard.style.transform =
+        `perspective(900px) rotateX(${currentX.toFixed(3)}deg) rotateY(${currentY.toFixed(3)}deg) scale3d(${currentScale.toFixed(4)}, ${currentScale.toFixed(4)}, 1)`;
+
+      const settled =
+        Math.abs(targetX - currentX) < 0.01 &&
+        Math.abs(targetY - currentY) < 0.01 &&
+        Math.abs(targetScale - currentScale) < 0.0005;
+
+      if (!settled) {
+        rafId = window.requestAnimationFrame(animateTilt);
+      } else {
+        if (targetX === 0 && targetY === 0 && targetScale === 1) {
+          profileCard.style.transform = '';
+        }
+        rafId = null;
+      }
+    }
+
+    function startTiltLoop() {
+      if (rafId === null) {
+        rafId = window.requestAnimationFrame(animateTilt);
+      }
+    }
+
     profileCard.addEventListener('pointermove', (event) => {
       if (event.pointerType !== 'mouse') return;
       const rect = profileCard.getBoundingClientRect();
       const px = (event.clientX - rect.left) / rect.width;
       const py = (event.clientY - rect.top) / rect.height;
-      const rotateY = ((px - 0.5) * 16).toFixed(2);
-      const rotateX = ((0.5 - py) * 16).toFixed(2);
+
+      targetY = (px - 0.5) * 14;
+      targetX = (0.5 - py) * 14;
+      targetScale = 1.02;
 
       profileCard.classList.add('is-tilting');
       profileCard.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
       profileCard.style.setProperty('--my', `${(py * 100).toFixed(1)}%`);
-      profileCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      startTiltLoop();
     });
 
     profileCard.addEventListener('pointerleave', () => {
+      targetX = 0;
+      targetY = 0;
+      targetScale = 1;
       profileCard.classList.remove('is-tilting');
-      profileCard.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      startTiltLoop();
     });
   }
 
