@@ -5,25 +5,26 @@
    ========================================================================== */
 
 :root {
-  --sand-bg: #e6ddd3;
-  --sand-deep: #dcd0c3;
-  --card-cream: #f6f0ea;
-  --white: #ffffff;
-  --off-white: #faf8f6;
+  --sand-bg: #d7ede2;
+  --sand-deep: #c4e4d4;
+  --card-cream: #edf7f1;
+  --white: #f4fbf7;
+  --pure-white: #ffffff;
+  --off-white: #e9f5ee;
 
-  --ink-950: #111827;
-  --ink-800: #1f2937;
-  --ink-700: #374151;
-  --ink-500: #6b7280;
+  --ink-950: #0d2018;
+  --ink-800: #163327;
+  --ink-700: #2b4b3d;
+  --ink-500: #4e6e60;
 
   --cobalt-600: #0f52ff;
   --cobalt-700: #0b41d1;
-  --cobalt-tint: rgba(15, 82, 255, 0.075);
-  --cobalt-tint-hover: rgba(15, 82, 255, 0.14);
+  --cobalt-tint: rgba(15, 82, 255, 0.08);
+  --cobalt-tint-hover: rgba(15, 82, 255, 0.15);
 
   --amber-glow: rgba(245, 158, 11, 0.18);
-  --rule: rgba(17, 24, 39, 0.085);
-  --rule-strong: rgba(17, 24, 39, 0.16);
+  --rule: rgba(13, 32, 24, 0.09);
+  --rule-strong: rgba(13, 32, 24, 0.18);
 
   --font-display: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -84,7 +85,7 @@ button {
   top: -100px;
   left: 1rem;
   background: var(--ink-950);
-  color: var(--white);
+  color: var(--pure-white);
   padding: 0.6rem 1rem;
   border-radius: var(--radius-sm);
   z-index: 1000;
@@ -109,7 +110,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(244, 251, 247, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
@@ -636,17 +637,17 @@ button {
 }
 
 .award-badge-box {
-  background: var(--off-white);
+  background: var(--pure-white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
-  padding: 1.35rem;
+  padding: 1.25rem;
   display: grid;
   place-items: center;
 }
 
 .award-badge-img {
   width: 100%;
-  max-width: 185px;
+  max-width: 215px;
   height: auto;
 }
 
@@ -682,15 +683,15 @@ button {
 
 /* 2. High-Contrast Quality-First Manifesto Card */
 .quality-card {
-  background: var(--ink-950);
-  color: var(--white);
+  background: linear-gradient(160deg, #133a2b 0%, #0b241a 100%);
+  color: var(--pure-white);
   border-radius: var(--radius-lg);
   padding: clamp(1.6rem, 3.5vw, 2.25rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.25rem;
-  box-shadow: 0 24px 48px -28px rgba(17, 24, 39, 0.5);
+  box-shadow: 0 24px 48px -28px rgba(11, 36, 26, 0.52);
 }
 
 .quality-kicker {
@@ -698,7 +699,7 @@ button {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #60a5fa;
+  color: #3ddc84;
 }
 
 .quality-title {
