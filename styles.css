@@ -5,8 +5,8 @@
    ========================================================================== */
 
 :root {
-  --sand-bg: #ddd2c5;
-  --card-cream: #f2eae0;
+  --sand-bg: #e6ddd3;
+  --card-cream: #f5efe9;
   --white: #ffffff;
   --off-white: #faf8f6;
 
@@ -248,12 +248,11 @@ a {
 /* Signature Floating Profile Card */
 .profile-card {
   background: var(--card-cream);
-  border: 1px solid rgba(17, 24, 39, 0.1);
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow:
-    -14px 24px 52px -16px rgba(17, 24, 39, 0.24),
-    0 4px 14px -2px rgba(17, 24, 39, 0.08);
+    -14px 24px 48px -18px rgba(17, 24, 39, 0.18),
+    0 2px 8px rgba(17, 24, 39, 0.05);
   text-align: center;
   max-width: 365px;
   width: 100%;
@@ -271,7 +270,7 @@ a {
   border-radius: 50%;
   padding: 4px;
   background: var(--white);
-  box-shadow: 0 12px 28px -14px rgba(17, 24, 39, 0.28);
+  box-shadow: 0 12px 28px -14px rgba(17, 24, 39, 0.25);
 }
 
 .avatar-img {
@@ -308,38 +307,19 @@ a {
   line-height: 1.7;
 }
 
-.flag-row {
+.profile-langs {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  margin-top: 1.35rem;
-  padding: 0.42rem 0.85rem;
-  background: rgba(17, 24, 39, 0.055);
-  border: 1px solid rgba(17, 24, 39, 0.08);
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--rule);
   border-radius: 999px;
-}
-
-.flag-badge {
-  display: inline-flex;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--white);
-  box-shadow: 0 2px 6px rgba(17, 24, 39, 0.22);
-  flex-shrink: 0;
-  transition: transform 160ms var(--ease-out);
-}
-
-.flag-badge:hover {
-  transform: translateY(-1px) scale(1.06);
-}
-
-.flag-badge svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-700);
 }
 
 .profile-socials {
@@ -349,7 +329,7 @@ a {
   gap: 0.75rem;
   padding: 1rem 1.5rem;
   background: var(--white);
-  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  border-top: 1px solid rgba(17, 24, 39, 0.05);
 }
 
 .social-btn {
@@ -430,69 +410,6 @@ a {
   text-decoration-color: var(--cobalt-600);
 }
 
-/* Stylish Bulleted Community Contributions */
-.contrib-list {
-  list-style: none;
-  margin: 0.15rem 0 0.25rem;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.55rem 1.25rem;
-}
-
-@media (min-width: 560px) {
-  .contrib-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.contrib-list li {
-  display: flex;
-  align-items: center;
-}
-
-.contrib-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink-950);
-  padding: 0.2rem 0;
-  transition: color 160ms ease, transform 160ms var(--ease-out);
-}
-
-.contrib-link::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--cobalt-600);
-  flex-shrink: 0;
-  transition: transform 160ms var(--ease-out);
-}
-
-.contrib-link::after {
-  content: "\2197";
-  font-size: 0.8em;
-  color: var(--cobalt-600);
-  opacity: 0.7;
-  transition: transform 160ms var(--ease-out), opacity 160ms ease;
-}
-
-.contrib-link:hover {
-  color: var(--cobalt-600);
-}
-
-.contrib-link:hover::before {
-  transform: scale(1.25);
-}
-
-.contrib-link:hover::after {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-
 /* ==========================================================================
    Credibility & Achievements Section
    ========================================================================== */
@@ -543,22 +460,23 @@ a {
 
 @media (min-width: 780px) {
   .award-showcase {
-    grid-template-columns: 330px 1fr;
+    grid-template-columns: 280px 1fr;
   }
 }
 
 .award-badge-frame {
-  background: #ffffff;
+  background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-sm);
-  padding: 1.5rem 1.25rem;
+  padding: 1.5rem 1.75rem;
   display: grid;
   place-items: center;
+  box-shadow: inset 0 0 0 4px var(--off-white);
 }
 
 .award-badge-img {
   width: 100%;
-  max-width: 290px;
+  max-width: 220px;
   height: auto;
   object-fit: contain;
 }
