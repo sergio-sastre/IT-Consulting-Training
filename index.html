@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sergio Sastre Flórez — Lead Android Engineer, Consultant &amp; Trainer</title>
+  <title>Sergio Sastre Flórez — Lead Android Engineer &amp; Google Developer Expert</title>
   <meta
     name="description"
-    content="Lead Android Engineer &amp; Google Developer Expert (GDE) for Android with 11+ years of experience. Freelance IT consulting, hands-on workshops, open source, and AI-augmented Android development."
+    content="Sergio Sastre Flórez — Lead Android Engineer, Freelance Consultant, Google Developer Expert (GDE) for Android, and 2024 Google Open Source Peer Bonus Award recipient."
   >
   <meta name="author" content="Sergio Sastre Flórez">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Sergio Sastre Flórez — Lead Android Engineer &amp; Consultant">
+  <meta property="og:title" content="Sergio Sastre Flórez — Lead Android Engineer &amp; Android GDE">
   <meta
     property="og:description"
-    content="Google Developer Expert for Android &amp; 2024 Google Peer Bonus Award recipient. Freelance consulting &amp; training in Kotlin, Jetpack Compose, testing, and AI-augmented coding."
+    content="Lead Android Engineer with 11+ years of experience at Check24, Deutsche Bahn, AutoScout24, Lieferando, and Hermes Germany. Google Developer Expert &amp; 2024 Google Peer Bonus Award recipient."
   >
   <meta property="og:url" content="https://sergio-sastre.github.io/IT-Consulting-Training/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
@@ -30,7 +30,11 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Sergio Sastre Flórez",
-      "jobTitle": "Lead Android Engineer, Freelance Consultant & Trainer",
+      "jobTitle": "Lead Android Engineer & Freelance Consultant",
+      "award": [
+        "Google Developer Expert (GDE) for Android",
+        "2024 Google Open Source Peer Bonus Award"
+      ],
       "knowsLanguage": ["Spanish", "English", "German"],
       "address": {
         "@type": "PostalAddress",
@@ -50,88 +54,59 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Header -->
-  <header class="site-header" id="site-header">
+  <!-- Minimal Header -->
+  <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand" id="brand-link">
-        <span class="brand-mark" aria-hidden="true">SSF</span>
+        <span class="brand-dot" aria-hidden="true"></span>
         <span>Sergio Sastre Flórez</span>
+        <span class="brand-role">/ Lead Android Engineer</span>
       </a>
 
-      <nav aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#community">Community</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="#credibility" class="nav-link">Achievements</a>
         <a
           href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn--dark btn--sm"
-          id="header-resume-btn"
+          class="nav-link"
         >
           Resume
-          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <button
-          type="button"
-          class="menu-toggle"
-          id="menu-toggle"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-          aria-label="Toggle navigation menu"
+        <a
+          href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary btn--sm"
+          id="header-cta"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M3 6H17M3 10H17M3 14H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="mobile-nav" id="mobile-nav">
-      <ul class="mobile-nav-list">
-        <li><a class="mobile-nav-link" href="#services">Services &amp; Training</a></li>
-        <li><a class="mobile-nav-link" href="#community">Open Source &amp; Talks</a></li>
-        <li><a class="mobile-nav-link" href="#contact">Contact</a></li>
-        <li>
-          <a
-            class="mobile-nav-link"
-            href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Resume &rarr;
-          </a>
-        </li>
-      </ul>
+          Let's Talk
+        </a>
+      </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- Hero: Modernized Profile Card + Personal Intro -->
+    <!-- Hero: Signature Split-Plane Wix-Inspired Card + Personal Pitch -->
     <section class="hero" id="top">
       <div class="container">
-        <div class="hero-layout">
-          <!-- Profile Card with Sergio's Real Photo -->
-          <aside class="profile-card" aria-label="Profile summary">
-            <div class="profile-card-body">
-              <div class="avatar-wrap">
+        <div class="hero-grid">
+          <!-- Floating Profile Card -->
+          <aside class="profile-card" aria-label="Sergio Sastre Flórez profile card">
+            <div class="profile-card-main">
+              <div class="avatar-ring">
                 <img
                   src="assets/sergio-avatar.png"
                   alt="Sergio Sastre Flórez — Google Developer Expert for Android"
                   class="avatar-img"
-                  width="156"
-                  height="156"
+                  width="172"
+                  height="172"
                 >
               </div>
               <h2 class="profile-name">Sergio Sastre<br>Flórez</h2>
-              <div class="profile-divider" aria-hidden="true"></div>
-              <p class="profile-role">Lead Android Engineer<br>Android GDE &middot; Munich</p>
-              <div class="profile-langs" title="Working languages: Spanish, English, German">
+              <div class="profile-rule" aria-hidden="true"></div>
+              <p class="profile-title">Lead<br>Android Engineer</p>
+              <div class="profile-langs" title="Fluent in Spanish, English, and German">
                 ES &middot; EN &middot; DE
               </div>
             </div>
@@ -141,7 +116,7 @@
                 href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="social-icon-btn"
+                class="social-btn"
                 aria-label="LinkedIn"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -152,7 +127,7 @@
                 href="https://github.com/sergio-sastre"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="social-icon-btn"
+                class="social-btn"
                 aria-label="GitHub"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -163,7 +138,7 @@
                 href="https://www.youtube.com/@sergio-sastre"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="social-icon-btn"
+                class="social-btn"
                 aria-label="YouTube"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -174,7 +149,7 @@
                 href="https://x.com/Gio_Sastre"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="social-icon-btn"
+                class="social-btn"
                 aria-label="X (Twitter)"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -184,10 +159,10 @@
             </div>
           </aside>
 
-          <!-- Personal Intro -->
-          <div>
-            <h1 class="hero-title">Let's work together!</h1>
-            <p class="hero-tagline">I make things happen &mdash; quality always comes first.</p>
+          <!-- Main Introduction -->
+          <div class="hero-content">
+            <h1 class="hero-headline">Let's work<br>together!</h1>
+            <p class="hero-tagline">I make things happen</p>
 
             <div class="hero-actions">
               <a
@@ -197,339 +172,158 @@
                 class="btn btn--primary"
                 id="hero-resume-btn"
               >
-                View Resume
-                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                Resume
               </a>
-              <a href="#contact" class="btn btn--ghost" id="hero-contact-btn">
+              <a
+                href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--outline"
+                id="hero-contact-btn"
+              >
                 Get in Touch
               </a>
             </div>
 
             <div class="hero-bio">
               <p>
-                I'm <strong>Sergio Sastre Flórez</strong>, a Lead Android Engineer &amp; freelance
-                consultant with <strong>11+ years of experience</strong> at leading German companies
-                including Check24, Deutsche Bahn, AutoScout24, Lieferando, and Hermes Germany.
+                I am <strong>Sergio Sastre Flórez</strong>, a Lead Android Engineer with
+                <strong>11+ years of experience</strong> at well-known German companies such as
+                <strong>Check24, Deutsche Bahn, AutoScout24, Lieferando, and Hermes Germany</strong>,
+                currently working as a freelancer/consultant.
               </p>
               <p>
-                Recognized as one of ~150
-                <a href="https://developers.google.com/community/experts" target="_blank" rel="noopener noreferrer" class="text-link">Google Developer Experts (GDE) for Android</a>
-                in Europe and honored with the 2024
-                <a href="https://opensource.googleblog.com/2024/06/google-open-source-peer-bonus-program-first-group-2024-recipients.html" target="_blank" rel="noopener noreferrer" class="text-link">Google Peer Bonus Award</a>.
-                I share my work through
-                <a href="https://sergiosastre.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="text-link">blog posts</a>,
-                <a href="https://sergiosastre.hashnode.dev/tech-talks" target="_blank" rel="noopener noreferrer" class="text-link">tech talks &amp; podcasts</a>,
-                <a href="https://sergiosastre.hashnode.dev/open-source" target="_blank" rel="noopener noreferrer" class="text-link">open source</a>,
+                Officially recognized by Google as one of the ~150
+                <a href="https://developers.google.com/community/experts" target="_blank" rel="noopener noreferrer" class="inline-link">Google Developer Experts (GDE) for Android</a>
+                in Europe, I actively contribute to the Android community through
+                <a href="https://sergiosastre.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="inline-link">blog posts</a>,
+                <a href="https://sergiosastre.hashnode.dev/tech-talks" target="_blank" rel="noopener noreferrer" class="inline-link">tech talks</a>,
+                <a href="https://sergiosastre.hashnode.dev/tech-talks" target="_blank" rel="noopener noreferrer" class="inline-link">podcasts</a>,
+                <a href="https://sergiosastre.hashnode.dev/open-source" target="_blank" rel="noopener noreferrer" class="inline-link">open source</a>,
                 and
-                <a href="https://www.youtube.com/@sergio-sastre" target="_blank" rel="noopener noreferrer" class="text-link">videos on augmented coding with AI</a>.
+                <a href="https://www.youtube.com/@sergio-sastre" target="_blank" rel="noopener noreferrer" class="inline-link">videos on augmented coding with AI</a>.
               </p>
               <p>
-                Fluent in <strong>Spanish, English, and German</strong> &mdash; working remotely
-                across Europe or on-site in Munich.
+                I work by the principle <strong>"quality always comes first"</strong> and strive to
+                create lasting impact in every project I take on. I am fluent in
+                <strong>Spanish, English, and German</strong> and work professionally in all three
+                languages.
               </p>
             </div>
-          </div>
-        </div>
-
-        <div class="trust-strip" aria-label="Companies collaborated with">
-          <span class="trust-label">Experience across</span>
-          <div class="trust-logos">
-            <span class="trust-name">Deutsche Bahn</span>
-            <span class="trust-name">CHECK24</span>
-            <span class="trust-name">AutoScout24</span>
-            <span class="trust-name">Lieferando</span>
-            <span class="trust-name">Hermes Germany</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 01 / Visual-First Services & Training -->
-    <section class="section section--surface" id="services">
+    <!-- Credibility & Achievements -->
+    <section class="credibility" id="credibility">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-index">01 / Services &amp; Training</span>
-            <h2 class="section-title">How I help Android teams ship better.</h2>
-          </div>
-          <p class="section-sub">
-            Hands-on consulting, team workshops, and modern testing &amp; AI workflows.
-          </p>
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Recognition &amp; Track Record</span>
+          <h2 class="section-title">Proven credibility in the Android ecosystem.</h2>
         </div>
 
-        <div class="visual-grid">
-          <article class="visual-card reveal">
-            <div class="visual-media">
-              <img
-                src="assets/service-consulting.jpg"
-                alt="Android engineering workspace with Kotlin code and modern mobile UI"
-                loading="lazy"
-              >
-            </div>
-            <div class="visual-body">
-              <span class="visual-tag">Consulting &middot; Technical Lead</span>
-              <h3 class="visual-title">Android &amp; Compose Consulting</h3>
-              <p class="visual-desc">
-                Embedded freelance leadership for Kotlin, Jetpack Compose, Compose Multiplatform,
-                and incremental XML migrations.
+        <!-- Featured 2024 Google Open Source Peer Bonus Award -->
+        <article class="award-showcase reveal">
+          <div class="award-badge-frame">
+            <img
+              src="assets/google-peer-bonus-2024.png"
+              alt="2024 Google Open Source Peer Bonus Award"
+              class="award-badge-img"
+              width="220"
+              height="118"
+            >
+          </div>
+          <div>
+            <span class="award-kicker">2024 Recipient</span>
+            <h3 class="award-title">Google Open Source Peer Bonus Award</h3>
+            <p class="award-desc">
+              Honored by Google in 2024 for open-source contributions advancing Android UI and
+              screenshot testing—including <strong>ComposablePreviewScanner</strong>,
+              <strong>Android Screenshot Testing Playground</strong>, and
+              <strong>AndroidUiTestingUtils</strong> (1,050+ GitHub stars combined).
+            </p>
+            <a
+              href="https://opensource.googleblog.com/2024/06/google-open-source-peer-bonus-program-first-group-2024-recipients.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="award-link"
+              id="peer-bonus-link"
+            >
+              Read Google's official announcement &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- 3 High-Trust Proof Cards -->
+        <div class="proof-grid">
+          <article class="proof-card reveal">
+            <div>
+              <div class="proof-metric">~150</div>
+              <h3 class="proof-label">Android GDEs in Europe</h3>
+              <p class="proof-desc">
+                Officially recognized by Google for technical excellence, leadership, and impact
+                across Kotlin, Jetpack Compose, and automated testing.
               </p>
-              <a
-                href="#contact"
-                class="visual-link"
-                data-prefill-topic="Android Consulting"
-                data-prefill-message="Hi Sergio, we'd love to discuss Android consulting for our team."
-              >
-                Book consulting &rarr;
-              </a>
             </div>
+            <a
+              href="https://developers.google.com/community/experts"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proof-link"
+            >
+              Google Developer Experts &rarr;
+            </a>
           </article>
 
-          <article class="visual-card reveal">
-            <div class="visual-media">
-              <img
-                src="assets/service-workshop.jpg"
-                alt="Software engineers collaborating during a hands-on Android workshop"
-                loading="lazy"
-              >
-            </div>
-            <div class="visual-body">
-              <span class="visual-tag">Training &middot; Remote or On-Site</span>
-              <h3 class="visual-title">Hands-On Team Workshops</h3>
-              <p class="visual-desc">
-                Practical workshops on Screenshot Testing, Composable Preview Driven Development
-                with AI, and Unit Testing in Kotlin.
+          <article class="proof-card reveal">
+            <div>
+              <div class="proof-metric">1,050+ &#9733;</div>
+              <h3 class="proof-label">Open Source &amp; Droidcon Academy</h3>
+              <p class="proof-desc">
+                Author of widely adopted Android screenshot testing libraries and the 7-hour
+                Droidcon Academy course on Paparazzi, Roborazzi &amp; Previews.
               </p>
-              <a
-                href="#contact"
-                class="visual-link"
-                data-prefill-topic="Team Workshop"
-                data-prefill-message="Hi Sergio, we're interested in booking a hands-on workshop for our Android team."
-              >
-                Request a workshop &rarr;
-              </a>
             </div>
+            <a
+              href="https://sergiosastre.hashnode.dev/open-source"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proof-link"
+            >
+              Explore open source &rarr;
+            </a>
           </article>
 
-          <article class="visual-card reveal">
-            <div class="visual-media">
-              <img
-                src="assets/service-testing.jpg"
-                alt="Three Android devices displaying light mode, dark mode, and large font scale UI verification"
-                loading="lazy"
-              >
-            </div>
-            <div class="visual-body">
-              <span class="visual-tag">Quality &middot; AI Workflows</span>
-              <h3 class="visual-title">Visual Testing &amp; AI Tooling</h3>
-              <p class="visual-desc">
-                Fast Paparazzi, Roborazzi &amp; Preview screenshot tests across themes, locales,
-                and accessibility — paired with AI-augmented TDD.
+          <article class="proof-card reveal">
+            <div>
+              <div class="proof-metric">AI + TDD</div>
+              <h3 class="proof-label">Speaker, Author &amp; YouTube Creator</h3>
+              <p class="proof-desc">
+                Regular Droidcon speaker, technical writer, and creator of practical videos on
+                augmented coding with AI and Composable Preview Driven Development.
               </p>
-              <a
-                href="#contact"
-                class="visual-link"
-                data-prefill-topic="Testing & AI Audit"
-                data-prefill-message="Hi Sergio, we'd like to improve our Android screenshot testing and AI coding workflow."
-              >
-                Upgrade your testing &rarr;
-              </a>
             </div>
+            <a
+              href="https://www.youtube.com/@sergio-sastre"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="proof-link"
+            >
+              Watch on YouTube &rarr;
+            </a>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- 02 / Community, Open Source & Courses (Compact Dark Band) -->
-    <section class="section section--dark" id="community">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-index">02 / Community &amp; Impact</span>
-            <h2 class="section-title">Open source, courses &amp; talks.</h2>
-          </div>
-          <p class="section-sub">
-            2024 Google Peer Bonus Award recipient &amp; Android GDE.
-          </p>
-        </div>
-
-        <div class="impact-grid">
-          <a
-            href="https://sergiosastre.hashnode.dev/open-source"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-card reveal"
-          >
-            <div>
-              <div class="impact-top">
-                <span class="impact-kicker">Open Source</span>
-                <span class="impact-stat">1,050+ &#9733;</span>
-              </div>
-              <h3 class="impact-title">Android Testing Libraries</h3>
-              <p class="impact-desc">
-                Creator of ComposablePreviewScanner, Android Screenshot Testing Playground, and
-                AndroidUiTestingUtils.
-              </p>
-            </div>
-            <div class="impact-foot">
-              <span>GitHub &amp; Hashnode</span>
-              <span>Explore &rarr;</span>
-            </div>
-          </a>
-
-          <a
-            href="https://academy.droidcon.com/course/master-screenshot-testing-on-android-comparing-paparazzi-roborazzi-and-compose-preview-tools"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-card reveal"
-          >
-            <div>
-              <div class="impact-top">
-                <span class="impact-kicker">Droidcon Academy</span>
-                <span class="impact-stat">7h Course</span>
-              </div>
-              <h3 class="impact-title">Master Screenshot Testing</h3>
-              <p class="impact-desc">
-                Hands-on course comparing Paparazzi, Roborazzi, and Compose Preview tools with a
-                full sample app &amp; challenges.
-              </p>
-            </div>
-            <div class="impact-foot">
-              <span>academy.droidcon.com</span>
-              <span>View Course &rarr;</span>
-            </div>
-          </a>
-
-          <a
-            href="https://www.youtube.com/@sergio-sastre"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-card reveal"
-          >
-            <div>
-              <div class="impact-top">
-                <span class="impact-kicker">YouTube Channel</span>
-                <span class="impact-stat">AI + Android</span>
-              </div>
-              <h3 class="impact-title">Augmented Coding with AI</h3>
-              <p class="impact-desc">
-                Practical videos showing how to pair AI coding tools with Composable Previews,
-                TDD, and automated tests.
-              </p>
-            </div>
-            <div class="impact-foot">
-              <span>@sergio-sastre</span>
-              <span>Watch Videos &rarr;</span>
-            </div>
-          </a>
-
-          <a
-            href="https://sergiosastre.hashnode.dev/tech-talks"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="impact-card reveal"
-          >
-            <div>
-              <div class="impact-top">
-                <span class="impact-kicker">Speaking &amp; Writing</span>
-                <span class="impact-stat">Droidcon &middot; GDG</span>
-              </div>
-              <h3 class="impact-title">Tech Talks, Podcasts &amp; Blog</h3>
-              <p class="impact-desc">
-                Conference sessions across Droidcon Berlin, London &amp; Lisbon plus in-depth
-                articles on Android UI &amp; unit testing.
-              </p>
-            </div>
-            <div class="impact-foot">
-              <span>sergiosastre.hashnode.dev</span>
-              <span>Browse All &rarr;</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 / Compact Contact -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-box reveal">
-          <div>
-            <span class="section-index">03 / Get in Touch</span>
-            <h2 class="section-title">Ready to collaborate?</h2>
-            <div class="contact-meta">
-              <span>Munich, Germany</span>
-              <span>&middot;</span>
-              <span>Remote EU / On-Site</span>
-              <span>&middot;</span>
-              <span>ES / EN / DE</span>
-            </div>
-            <div class="contact-actions">
-              <a
-                href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn--primary"
-                id="contact-linkedin-btn"
-              >
-                Connect on LinkedIn
-                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-              <a
-                href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn--ghost"
-                id="contact-resume-btn"
-              >
-                View Resume
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <div class="topic-group" role="group" aria-label="Inquiry topic">
-              <button type="button" class="topic-chip is-selected" data-topic="Android Consulting" aria-pressed="true">
-                Consulting
-              </button>
-              <button type="button" class="topic-chip" data-topic="Team Workshop" aria-pressed="false">
-                Workshop
-              </button>
-              <button type="button" class="topic-chip" data-topic="Testing & AI Audit" aria-pressed="false">
-                Testing &amp; AI
-              </button>
-              <button type="button" class="topic-chip" data-topic="Conference Talk" aria-pressed="false">
-                Speaking
-              </button>
-            </div>
-
-            <form id="inquiry-form" class="form-grid" novalidate>
-              <div class="field">
-                <input
-                  type="text"
-                  id="inquiry-name"
-                  name="name"
-                  placeholder="Your name &amp; company"
-                  aria-label="Your name and company"
-                  autocomplete="name"
-                >
-              </div>
-              <div class="field">
-                <textarea
-                  id="inquiry-message"
-                  name="message"
-                  placeholder="Briefly describe your project, workshop, or talk..."
-                  aria-label="Message"
-                ></textarea>
-              </div>
-              <div class="form-actions">
-                <button type="submit" class="btn btn--dark btn--sm" id="submit-inquiry-btn">
-                  Copy &amp; Open LinkedIn &rarr;
-                </button>
-                <button type="button" class="btn btn--ghost btn--sm" id="copy-brief-btn">
-                  Copy Brief
-                </button>
-              </div>
-              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-            </form>
+        <!-- Trusted Companies Strip -->
+        <div class="clients-bar reveal" aria-label="German companies collaborated with">
+          <span class="clients-label">Trusted by teams at</span>
+          <div class="clients-list">
+            <span class="client-item">Check24</span>
+            <span class="client-item">Deutsche Bahn</span>
+            <span class="client-item">AutoScout24</span>
+            <span class="client-item">Lieferando</span>
+            <span class="client-item">Hermes Germany</span>
           </div>
         </div>
       </div>
@@ -538,13 +332,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; <span id="current-year">2026</span> Sergio Sastre Flórez &middot; Munich, Germany</div>
+      <div>&copy; <span id="current-year">2026</span> Sergio Sastre Flórez &middot; Munich &middot; ES / EN / DE</div>
       <div class="footer-links">
+        <a href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume" target="_blank" rel="noopener noreferrer">Resume</a>
         <a href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/sergio-sastre" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.youtube.com/@sergio-sastre" target="_blank" rel="noopener noreferrer">YouTube</a>
         <a href="https://sergiosastre.hashnode.dev/" target="_blank" rel="noopener noreferrer">Blog</a>
-        <a href="https://x.com/Gio_Sastre" target="_blank" rel="noopener noreferrer">X</a>
       </div>
     </div>
   </footer>
