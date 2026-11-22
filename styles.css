@@ -578,6 +578,36 @@ button {
   font-weight: 700;
 }
 
+.lang-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.45rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+}
+
+.lang-strip-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin-right: 0.35rem;
+}
+
+.lang-item {
+  font-weight: 700;
+  color: var(--ink-950);
+}
+
+.lang-sep {
+  color: var(--cobalt-600);
+  font-weight: 700;
+}
+
 /* ==========================================================================
    Credibility & Quality-First Bento Section
    ========================================================================== */
