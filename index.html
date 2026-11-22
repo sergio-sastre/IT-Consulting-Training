@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sergio Sastre Flórez — Android Consulting, Testing &amp; Training</title>
+  <title>Sergio Sastre Flórez — Lead Android Engineer, Consultant &amp; Trainer</title>
   <meta
     name="description"
-    content="Freelance Lead Android Engineer, Google Developer Expert for Android, and Trainer based in Munich. Consulting and hands-on workshops on Kotlin, Jetpack Compose, Compose Multiplatform, and automated screenshot testing."
+    content="Lead Android Engineer &amp; Google Developer Expert (GDE) for Android with 11+ years of experience. Freelance IT consulting, hands-on workshops, open source, and AI-augmented Android development."
   >
   <meta name="author" content="Sergio Sastre Flórez">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Sergio Sastre Flórez — Android Consulting, Testing &amp; Training">
+  <meta property="og:title" content="Sergio Sastre Flórez — Lead Android Engineer &amp; Consultant">
   <meta
     property="og:description"
-    content="Google Developer Expert for Android with 13+ years of experience helping engineering teams ship resilient Kotlin &amp; Compose apps faster through architecture consulting and hands-on training."
+    content="Google Developer Expert for Android &amp; 2024 Google Peer Bonus Award recipient. Freelance consulting &amp; training in Kotlin, Jetpack Compose, testing, and AI-augmented coding."
   >
   <meta property="og:url" content="https://sergio-sastre.github.io/IT-Consulting-Training/">
 
@@ -30,19 +30,19 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Sergio Sastre Flórez",
-      "jobTitle": "Freelance Lead Android Engineer, Consultant & Trainer",
-      "description": "Google Developer Expert for Android specializing in Kotlin, Jetpack Compose, Compose Multiplatform, automated UI & screenshot testing, and developer tooling.",
+      "jobTitle": "Lead Android Engineer, Freelance Consultant & Trainer",
+      "knowsLanguage": ["Spanish", "English", "German"],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Munich",
         "addressCountry": "DE"
       },
       "sameAs": [
-        "https://github.com/sergio-sastre",
         "https://www.linkedin.com/in/sergio-sastre-florez-75b62754/",
-        "https://sergiosastre.hashnode.dev/",
+        "https://github.com/sergio-sastre",
+        "https://www.youtube.com/@sergio-sastre",
         "https://x.com/Gio_Sastre",
-        "https://sessionize.com/sergio-sastre-florez/"
+        "https://sergiosastre.hashnode.dev/"
       ]
     }
   </script>
@@ -53,24 +53,28 @@
   <!-- Header -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" id="brand-link" aria-label="Sergio Sastre Flórez — Home">
+      <a href="#top" class="brand" id="brand-link">
         <span class="brand-mark" aria-hidden="true">SSF</span>
         <span>Sergio Sastre Flórez</span>
       </a>
 
       <nav aria-label="Primary navigation">
         <ul class="nav-list">
-          <li><a class="nav-link" href="#services">Consulting</a></li>
-          <li><a class="nav-link" href="#training">Training</a></li>
-          <li><a class="nav-link" href="#open-source">Open Source</a></li>
-          <li><a class="nav-link" href="#speaking">Talks &amp; Writing</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#community">Community</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="btn btn--primary btn--sm" id="header-cta">
-          Get in Touch
+        <a
+          href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--dark btn--sm"
+          id="header-resume-btn"
+        >
+          Resume
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
         <button
@@ -90,869 +94,438 @@
 
     <div class="mobile-nav" id="mobile-nav">
       <ul class="mobile-nav-list">
-        <li><a class="mobile-nav-link" href="#services">Consulting</a></li>
-        <li><a class="mobile-nav-link" href="#training">Training &amp; Workshops</a></li>
-        <li><a class="mobile-nav-link" href="#open-source">Open Source</a></li>
-        <li><a class="mobile-nav-link" href="#speaking">Talks &amp; Writing</a></li>
-        <li><a class="mobile-nav-link" href="#about">About</a></li>
+        <li><a class="mobile-nav-link" href="#services">Services &amp; Training</a></li>
+        <li><a class="mobile-nav-link" href="#community">Open Source &amp; Talks</a></li>
+        <li><a class="mobile-nav-link" href="#contact">Contact</a></li>
+        <li>
+          <a
+            class="mobile-nav-link"
+            href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume &rarr;
+          </a>
+        </li>
       </ul>
-      <a href="#contact" class="btn btn--primary mobile-nav-cta" id="mobile-nav-cta">Start a Conversation</a>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- Hero -->
+    <!-- Hero: Modernized Profile Card + Personal Intro -->
     <section class="hero" id="top">
       <div class="container">
-        <div class="hero-grid">
+        <div class="hero-layout">
+          <!-- Profile Card with Sergio's Real Photo -->
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="profile-card-body">
+              <div class="avatar-wrap">
+                <img
+                  src="assets/sergio-avatar.png"
+                  alt="Sergio Sastre Flórez — Google Developer Expert for Android"
+                  class="avatar-img"
+                  width="156"
+                  height="156"
+                >
+              </div>
+              <h2 class="profile-name">Sergio Sastre<br>Flórez</h2>
+              <div class="profile-divider" aria-hidden="true"></div>
+              <p class="profile-role">Lead Android Engineer<br>Android GDE &middot; Munich</p>
+              <div class="profile-langs" title="Working languages: Spanish, English, German">
+                ES &middot; EN &middot; DE
+              </div>
+            </div>
+
+            <div class="profile-socials" aria-label="Social profiles">
+              <a
+                href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn"
+                aria-label="LinkedIn"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/sergio-sastre"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn"
+                aria-label="GitHub"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@sergio-sastre"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn"
+                aria-label="YouTube"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+                </svg>
+              </a>
+              <a
+                href="https://x.com/Gio_Sastre"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn"
+                aria-label="X (Twitter)"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Personal Intro -->
           <div>
-            <p class="hero-kicker">Android GDE &middot; Freelance Consultant &amp; Trainer &middot; Munich</p>
-            <h1 class="hero-title">
-              Build resilient Android &amp; Compose apps with <em>surgical</em> confidence.
-            </h1>
-            <p class="hero-subtitle">
-              I help engineering teams ship faster without visual regressions or brittle test suites.
-              With 13+ years in Kotlin, Jetpack Compose, Compose Multiplatform, and automated testing,
-              I partner with companies as a hands-on technical lead, consultant, and workshop trainer.
-            </p>
+            <h1 class="hero-title">Let's work together!</h1>
+            <p class="hero-tagline">I make things happen &mdash; quality always comes first.</p>
+
             <div class="hero-actions">
-              <a href="#contact" class="btn btn--primary" id="hero-cta-primary">
-                Discuss Your Project
+              <a
+                href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+                id="hero-resume-btn"
+              >
+                View Resume
                 <span class="btn-arrow" aria-hidden="true">&rarr;</span>
               </a>
-              <a href="#training" class="btn btn--ghost" id="hero-cta-secondary">
-                Explore Workshops
+              <a href="#contact" class="btn btn--ghost" id="hero-contact-btn">
+                Get in Touch
               </a>
             </div>
 
-            <div class="hero-metrics" aria-label="Experience highlights">
-              <div>
-                <div class="metric-value">13+ yrs</div>
-                <div class="metric-label">Production Android &amp; Kotlin leadership</div>
-              </div>
-              <div>
-                <div class="metric-value">1,050+</div>
-                <div class="metric-label">GitHub stars across UI testing tools</div>
-              </div>
-              <div>
-                <div class="metric-value">2024</div>
-                <div class="metric-label">Google Open Source Peer Bonus winner</div>
-              </div>
+            <div class="hero-bio">
+              <p>
+                I'm <strong>Sergio Sastre Flórez</strong>, a Lead Android Engineer &amp; freelance
+                consultant with <strong>11+ years of experience</strong> at leading German companies
+                including Check24, Deutsche Bahn, AutoScout24, Lieferando, and Hermes Germany.
+              </p>
+              <p>
+                Recognized as one of ~150
+                <a href="https://developers.google.com/community/experts" target="_blank" rel="noopener noreferrer" class="text-link">Google Developer Experts (GDE) for Android</a>
+                in Europe and honored with the 2024
+                <a href="https://opensource.googleblog.com/2024/06/google-open-source-peer-bonus-program-first-group-2024-recipients.html" target="_blank" rel="noopener noreferrer" class="text-link">Google Peer Bonus Award</a>.
+                I share my work through
+                <a href="https://sergiosastre.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="text-link">blog posts</a>,
+                <a href="https://sergiosastre.hashnode.dev/tech-talks" target="_blank" rel="noopener noreferrer" class="text-link">tech talks &amp; podcasts</a>,
+                <a href="https://sergiosastre.hashnode.dev/open-source" target="_blank" rel="noopener noreferrer" class="text-link">open source</a>,
+                and
+                <a href="https://www.youtube.com/@sergio-sastre" target="_blank" rel="noopener noreferrer" class="text-link">videos on augmented coding with AI</a>.
+              </p>
+              <p>
+                Fluent in <strong>Spanish, English, and German</strong> &mdash; working remotely
+                across Europe or on-site in Munich.
+              </p>
             </div>
           </div>
-
-          <figure class="hero-figure">
-            <div class="hero-frame">
-              <img
-                src="assets/editorial-geometry.jpg"
-                alt="Architectural geometric composition representing modular Android UI layers and precision visual testing"
-                class="hero-artwork"
-                width="1024"
-                height="768"
-              >
-              <figcaption class="hero-caption">
-                <span>Architecture &middot; Testing &middot; Tooling</span>
-                <span>Remote EU / On-Site Munich</span>
-              </figcaption>
-            </div>
-          </figure>
         </div>
 
-        <div class="trust-strip" aria-label="Companies Sergio has collaborated with">
-          <span class="trust-label">Trusted by engineering teams at</span>
+        <div class="trust-strip" aria-label="Companies collaborated with">
+          <span class="trust-label">Experience across</span>
           <div class="trust-logos">
-            <span class="trust-name">Deutsche Bahn Systel</span>
+            <span class="trust-name">Deutsche Bahn</span>
             <span class="trust-name">CHECK24</span>
-            <span class="trust-name">Lieferando</span>
             <span class="trust-name">AutoScout24</span>
+            <span class="trust-name">Lieferando</span>
             <span class="trust-name">Hermes Germany</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 01 / Consulting Services -->
-    <section class="section section--bordered" id="services">
+    <!-- 01 / Visual-First Services & Training -->
+    <section class="section section--surface" id="services">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-head reveal">
           <div>
-            <span class="section-index">01 / Consulting</span>
-            <h2 class="section-title">Hands-on engineering for teams that care about craft.</h2>
+            <span class="section-index">01 / Services &amp; Training</span>
+            <h2 class="section-title">How I help Android teams ship better.</h2>
           </div>
-          <p class="section-lead">
-            Whether embedding directly into your Android team as a technical lead or running focused
-            architecture and testing engagements, every deliverable is built to outlast my stay.
+          <p class="section-sub">
+            Hands-on consulting, team workshops, and modern testing &amp; AI workflows.
           </p>
         </div>
 
-        <div class="service-ledger">
-          <article class="service-row reveal">
-            <div class="service-num">01.1</div>
-            <div>
-              <h3 class="service-heading">Android &amp; Compose Architecture</h3>
-              <span class="service-tag">Kotlin &middot; Jetpack Compose &middot; KMP</span>
+        <div class="visual-grid">
+          <article class="visual-card reveal">
+            <div class="visual-media">
+              <img
+                src="assets/service-consulting.jpg"
+                alt="Android engineering workspace with Kotlin code and modern mobile UI"
+                loading="lazy"
+              >
             </div>
-            <div class="service-body">
-              <p>
-                Modernize legacy XML codebases into clean, maintainable Jetpack Compose and Compose
-                Multiplatform architectures without halting feature delivery.
-              </p>
-              <ul class="service-deliverables">
-                <li>Incremental XML-to-Compose migration roadmaps</li>
-                <li>Modular architecture &amp; state management design</li>
-                <li>Design system &amp; reusable UI component foundations</li>
-                <li>Technical leadership, code reviews &amp; team mentoring</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="service-row reveal">
-            <div class="service-num">01.2</div>
-            <div>
-              <h3 class="service-heading">Automated UI &amp; Screenshot Testing</h3>
-              <span class="service-tag">Paparazzi &middot; Roborazzi &middot; Dropshots &middot; Shot</span>
-            </div>
-            <div class="service-body">
-              <p>
-                Replace slow, flaky instrumentation suites with fast, deterministic screenshot and
-                visual regression testing across every theme, locale, font scale, and screen size.
-              </p>
-              <ul class="service-deliverables">
-                <li>Tooling evaluation &amp; library selection for your stack</li>
-                <li>Auto-generating screenshot tests from Compose Previews</li>
-                <li>Accessibility, RTL, dark mode &amp; font-size test matrices</li>
-                <li>CI/CD integration with fast PR verification loops</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="service-row reveal">
-            <div class="service-num">01.3</div>
-            <div>
-              <h3 class="service-heading">Developer Tooling &amp; AI-Assisted Workflows</h3>
-              <span class="service-tag">CPDD &middot; TDD &middot; Property-Based Testing</span>
-            </div>
-            <div class="service-body">
-              <p>
-                Eliminate friction in daily engineering workflows by combining Composable Preview
-                Driven Development (CPDD), rigorous unit testing, and practical AI tooling.
-              </p>
-              <ul class="service-deliverables">
-                <li>Composable Preview Driven Development with AI</li>
-                <li>Parameterized, property-based &amp; stateful unit testing</li>
-                <li>Custom testing utilities &amp; Gradle build ergonomics</li>
-                <li>Engineering quality audits &amp; actionable playbooks</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 / Training & Workshops (Dark Petrol Band) -->
-    <section class="section section--dark" id="training">
-      <div class="container">
-        <div class="section-header reveal">
-          <div>
-            <span class="section-index">02 / Training &amp; Courses</span>
-            <h2 class="section-title">Practical training built from real production codebases.</h2>
-          </div>
-          <p class="section-lead">
-            No slide-heavy theory. Every workshop is interactive and hands-on, giving your Android
-            engineers patterns they can apply to their own pull requests the very next morning.
-          </p>
-        </div>
-
-        <div class="tab-bar" role="tablist" aria-label="Training formats">
-          <button
-            type="button"
-            class="tab-btn"
-            role="tab"
-            id="tab-workshops"
-            aria-selected="true"
-            aria-controls="panel-workshops"
-            tabindex="0"
-          >
-            Team Workshops
-          </button>
-          <button
-            type="button"
-            class="tab-btn"
-            role="tab"
-            id="tab-course"
-            aria-selected="false"
-            aria-controls="panel-course"
-            tabindex="-1"
-          >
-            Droidcon Academy Course
-          </button>
-          <button
-            type="button"
-            class="tab-btn"
-            role="tab"
-            id="tab-advisory"
-            aria-selected="false"
-            aria-controls="panel-advisory"
-            tabindex="-1"
-          >
-            1:1 &amp; Team Coaching
-          </button>
-        </div>
-
-        <!-- Panel 1: Team Workshops -->
-        <div
-          class="tab-panel is-active"
-          role="tabpanel"
-          id="panel-workshops"
-          aria-labelledby="tab-workshops"
-        >
-          <div class="workshop-grid">
-            <article class="workshop-card">
-              <div>
-                <div class="workshop-meta">Hands-On Workshop &middot; 1–2 Days</div>
-                <h3 class="workshop-title">Mastering Screenshot Testing on Android</h3>
-                <p class="workshop-desc">
-                  Compare JVM-based and on-device screenshot testing libraries side by side, and
-                  build a production-ready visual regression pipeline.
-                </p>
-                <ul class="workshop-topics">
-                  <li>Paparazzi, Roborazzi &amp; Compose Preview Testing</li>
-                  <li>Testing locales, font scales, dark mode &amp; accessibility</li>
-                  <li>Auto-generating tests via ComposablePreviewScanner</li>
-                  <li>CI workflows, flake prevention &amp; review ergonomics</li>
-                </ul>
-              </div>
-              <div class="workshop-footer">
-                <span>Remote or On-Site</span>
-                <a
-                  href="#contact"
-                  class="workshop-link"
-                  data-prefill-topic="Team Workshop"
-                  data-prefill-message="Hi Sergio, we're interested in booking the 'Mastering Screenshot Testing on Android' workshop for our team."
-                >
-                  Inquire &rarr;
-                </a>
-              </div>
-            </article>
-
-            <article class="workshop-card">
-              <div>
-                <div class="workshop-meta">Hands-On Workshop &middot; Half or Full Day</div>
-                <h3 class="workshop-title">Composable Preview Driven Development + AI</h3>
-                <p class="workshop-desc">
-                  Combine Jetpack Compose Previews, TDD, screenshot tests, and AI coding assistants
-                  to design and refactor UIs rapidly with zero guesswork.
-                </p>
-                <ul class="workshop-topics">
-                  <li>Preview-first UI architecture &amp; state modeling</li>
-                  <li>Using Compose Previews even for legacy XML Views</li>
-                  <li>Amplifying TDD feedback loops with AI workflows</li>
-                  <li>Safe, large-scale UI refactoring patterns</li>
-                </ul>
-              </div>
-              <div class="workshop-footer">
-                <span>Remote or On-Site</span>
-                <a
-                  href="#contact"
-                  class="workshop-link"
-                  data-prefill-topic="Team Workshop"
-                  data-prefill-message="Hi Sergio, we'd love to learn more about the 'Composable Preview Driven Development + AI' workshop."
-                >
-                  Inquire &rarr;
-                </a>
-              </div>
-            </article>
-
-            <article class="workshop-card">
-              <div>
-                <div class="workshop-meta">Hands-On Workshop &middot; 1 Day</div>
-                <h3 class="workshop-title">Multiplying Unit Test Quality in Kotlin</h3>
-                <p class="workshop-desc">
-                  Move beyond brittle example-based tests. Learn how parameterized, property-based,
-                  and stateful tests uncover edge cases before users do.
-                </p>
-                <ul class="workshop-topics">
-                  <li>Data-driven &amp; parameterized testing with JUnit5</li>
-                  <li>Property-based testing with jqwik in Kotlin</li>
-                  <li>Stateful testing for complex UI &amp; domain flows</li>
-                  <li>Keeping test suites fast, readable &amp; maintainable</li>
-                </ul>
-              </div>
-              <div class="workshop-footer">
-                <span>Remote or On-Site</span>
-                <a
-                  href="#contact"
-                  class="workshop-link"
-                  data-prefill-topic="Team Workshop"
-                  data-prefill-message="Hi Sergio, we're interested in the 'Multiplying Unit Test Quality in Kotlin' workshop for our engineering team."
-                >
-                  Inquire &rarr;
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- Panel 2: Droidcon Academy Course -->
-        <div
-          class="tab-panel"
-          role="tabpanel"
-          id="panel-course"
-          aria-labelledby="tab-course"
-          hidden
-        >
-          <div class="course-feature">
-            <div>
-              <div class="workshop-meta">Self-Paced Online Course &middot; Droidcon Academy</div>
-              <h3 class="workshop-title">
-                Master Screenshot Testing on Android: Comparing Paparazzi, Roborazzi, and Compose Preview Tools
-              </h3>
-              <p class="workshop-desc">
-                A comprehensive, hands-on codelab built around a real multi-module Compose app. You
-                implement single-frame tests with Paparazzi, multi-frame interaction tests with
-                Roborazzi, accessibility snapshots, and automated Preview-driven test generation.
+            <div class="visual-body">
+              <span class="visual-tag">Consulting &middot; Technical Lead</span>
+              <h3 class="visual-title">Android &amp; Compose Consulting</h3>
+              <p class="visual-desc">
+                Embedded freelance leadership for Kotlin, Jetpack Compose, Compose Multiplatform,
+                and incremental XML migrations.
               </p>
               <a
-                href="https://academy.droidcon.com/course/master-screenshot-testing-on-android-comparing-paparazzi-roborazzi-and-compose-preview-tools"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn--copper"
-                id="droidcon-course-link"
+                href="#contact"
+                class="visual-link"
+                data-prefill-topic="Android Consulting"
+                data-prefill-message="Hi Sergio, we'd love to discuss Android consulting for our team."
               >
-                View Course on Droidcon Academy
-                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                Book consulting &rarr;
               </a>
             </div>
+          </article>
 
-            <div class="course-specs">
-              <div>
-                <div class="course-spec-label">Duration</div>
-                <div class="course-spec-val">7+ Hours</div>
-              </div>
-              <div>
-                <div class="course-spec-label">Level</div>
-                <div class="course-spec-val">Intermediate</div>
-              </div>
-              <div>
-                <div class="course-spec-label">Format</div>
-                <div class="course-spec-val">Sample App &amp; Challenges</div>
-              </div>
-              <div>
-                <div class="course-spec-label">Focus</div>
-                <div class="course-spec-val">Paparazzi, Roborazzi &amp; Previews</div>
-              </div>
+          <article class="visual-card reveal">
+            <div class="visual-media">
+              <img
+                src="assets/service-workshop.jpg"
+                alt="Software engineers collaborating during a hands-on Android workshop"
+                loading="lazy"
+              >
             </div>
-          </div>
-        </div>
+            <div class="visual-body">
+              <span class="visual-tag">Training &middot; Remote or On-Site</span>
+              <h3 class="visual-title">Hands-On Team Workshops</h3>
+              <p class="visual-desc">
+                Practical workshops on Screenshot Testing, Composable Preview Driven Development
+                with AI, and Unit Testing in Kotlin.
+              </p>
+              <a
+                href="#contact"
+                class="visual-link"
+                data-prefill-topic="Team Workshop"
+                data-prefill-message="Hi Sergio, we're interested in booking a hands-on workshop for our Android team."
+              >
+                Request a workshop &rarr;
+              </a>
+            </div>
+          </article>
 
-        <!-- Panel 3: 1:1 & Team Coaching -->
-        <div
-          class="tab-panel"
-          role="tabpanel"
-          id="panel-advisory"
-          aria-labelledby="tab-advisory"
-          hidden
-        >
-          <div class="advisory-grid">
-            <article class="workshop-card">
-              <div>
-                <div class="workshop-meta">Targeted Engagement &middot; 1–2 Weeks</div>
-                <h3 class="workshop-title">Testing &amp; Architecture Audit</h3>
-                <p class="workshop-desc">
-                  An independent review of your Android codebase, Compose architecture, and test
-                  pyramid—delivered with a prioritized roadmap and reference PRs your team can copy.
-                </p>
-              </div>
-              <div class="workshop-footer">
-                <span>Fixed Scope</span>
-                <a
-                  href="#contact"
-                  class="workshop-link"
-                  data-prefill-topic="Architecture Review"
-                  data-prefill-message="Hi Sergio, we'd like to discuss a Testing &amp; Architecture Audit for our Android codebase."
-                >
-                  Request Scope &rarr;
-                </a>
-              </div>
-            </article>
-
-            <article class="workshop-card">
-              <div>
-                <div class="workshop-meta">Ongoing Retainer &middot; Monthly</div>
-                <h3 class="workshop-title">Staff-Level Technical Advisory</h3>
-                <p class="workshop-desc">
-                  Periodic pairing sessions, architecture decision reviews, and coaching for Android
-                  leads scaling Compose adoption, KMP initiatives, or automated quality gates.
-                </p>
-              </div>
-              <div class="workshop-footer">
-                <span>Flexible Cadence</span>
-                <a
-                  href="#contact"
-                  class="workshop-link"
-                  data-prefill-topic="Android Consulting"
-                  data-prefill-message="Hi Sergio, we're interested in ongoing Staff-Level Technical Advisory for our mobile team."
-                >
-                  Discuss Retainer &rarr;
-                </a>
-              </div>
-            </article>
-          </div>
+          <article class="visual-card reveal">
+            <div class="visual-media">
+              <img
+                src="assets/service-testing.jpg"
+                alt="Three Android devices displaying light mode, dark mode, and large font scale UI verification"
+                loading="lazy"
+              >
+            </div>
+            <div class="visual-body">
+              <span class="visual-tag">Quality &middot; AI Workflows</span>
+              <h3 class="visual-title">Visual Testing &amp; AI Tooling</h3>
+              <p class="visual-desc">
+                Fast Paparazzi, Roborazzi &amp; Preview screenshot tests across themes, locales,
+                and accessibility — paired with AI-augmented TDD.
+              </p>
+              <a
+                href="#contact"
+                class="visual-link"
+                data-prefill-topic="Testing & AI Audit"
+                data-prefill-message="Hi Sergio, we'd like to improve our Android screenshot testing and AI coding workflow."
+              >
+                Upgrade your testing &rarr;
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 03 / Open Source & Recognition -->
-    <section class="section" id="open-source">
+    <!-- 02 / Community, Open Source & Courses (Compact Dark Band) -->
+    <section class="section section--dark" id="community">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-head reveal">
           <div>
-            <span class="section-index">03 / Open Source</span>
-            <h2 class="section-title">Tools used by Android teams worldwide.</h2>
+            <span class="section-index">02 / Community &amp; Impact</span>
+            <h2 class="section-title">Open source, courses &amp; talks.</h2>
           </div>
-          <p class="section-lead">
-            I maintain open-source libraries and reference repositories that make UI and screenshot
-            testing pragmatic across Compose, Android Views, and Compose Multiplatform.
+          <p class="section-sub">
+            2024 Google Peer Bonus Award recipient &amp; Android GDE.
           </p>
         </div>
 
-        <div class="award-banner reveal">
-          <div>
-            <span class="award-kicker">Recognition &middot; 2024</span>
-            <p class="award-text">
-              <strong>Google Open Source Peer Bonus Award</strong> — recognized for contributions to
-              the Android testing ecosystem and <em>Android Screenshot Testing Playground</em>.
-            </p>
-          </div>
+        <div class="impact-grid">
           <a
-            href="https://github.com/sergio-sastre"
+            href="https://sergiosastre.hashnode.dev/open-source"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn--ghost btn--sm"
-            id="github-profile-btn"
-          >
-            GitHub Profile &rarr;
-          </a>
-        </div>
-
-        <div class="repo-grid">
-          <a
-            href="https://github.com/sergio-sastre/ComposablePreviewScanner"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="repo-card reveal"
+            class="impact-card reveal"
           >
             <div>
-              <div class="repo-top">
-                <h3 class="repo-name">ComposablePreviewScanner</h3>
-                <span class="repo-stars">&#9733; 371+</span>
+              <div class="impact-top">
+                <span class="impact-kicker">Open Source</span>
+                <span class="impact-stat">1,050+ &#9733;</span>
               </div>
-              <p class="repo-desc">
-                Compose Multiplatform friendly library to auto-generate screenshot tests from
-                Composable Previews (Android, Glance, JVM) with Paparazzi, Roborazzi, Shot,
-                Dropshots, or Android-Testify.
+              <h3 class="impact-title">Android Testing Libraries</h3>
+              <p class="impact-desc">
+                Creator of ComposablePreviewScanner, Android Screenshot Testing Playground, and
+                AndroidUiTestingUtils.
               </p>
             </div>
-            <div class="repo-foot">
-              <span>Kotlin &middot; Compose Multiplatform</span>
-              <span>View Repo &rarr;</span>
+            <div class="impact-foot">
+              <span>GitHub &amp; Hashnode</span>
+              <span>Explore &rarr;</span>
             </div>
           </a>
 
           <a
-            href="https://github.com/sergio-sastre/Android-screenshot-testing-playground"
+            href="https://academy.droidcon.com/course/master-screenshot-testing-on-android-comparing-paparazzi-roborazzi-and-compose-preview-tools"
             target="_blank"
             rel="noopener noreferrer"
-            class="repo-card reveal"
+            class="impact-card reveal"
           >
             <div>
-              <div class="repo-top">
-                <h3 class="repo-name">Android-screenshot-testing-playground</h3>
-                <span class="repo-stars">&#9733; 351+</span>
+              <div class="impact-top">
+                <span class="impact-kicker">Droidcon Academy</span>
+                <span class="impact-stat">7h Course</span>
               </div>
-              <p class="repo-desc">
-                Google Open Source Peer Bonus winner. A living reference project demonstrating
-                executable screenshot testing setups across the major Android libraries.
+              <h3 class="impact-title">Master Screenshot Testing</h3>
+              <p class="impact-desc">
+                Hands-on course comparing Paparazzi, Roborazzi, and Compose Preview tools with a
+                full sample app &amp; challenges.
               </p>
             </div>
-            <div class="repo-foot">
-              <span>Kotlin &middot; Reference Playground</span>
-              <span>View Repo &rarr;</span>
+            <div class="impact-foot">
+              <span>academy.droidcon.com</span>
+              <span>View Course &rarr;</span>
             </div>
           </a>
 
           <a
-            href="https://github.com/sergio-sastre/AndroidUiTestingUtils"
+            href="https://www.youtube.com/@sergio-sastre"
             target="_blank"
             rel="noopener noreferrer"
-            class="repo-card reveal"
+            class="impact-card reveal"
           >
             <div>
-              <div class="repo-top">
-                <h3 class="repo-name">AndroidUiTestingUtils</h3>
-                <span class="repo-stars">&#9733; 308+</span>
+              <div class="impact-top">
+                <span class="impact-kicker">YouTube Channel</span>
+                <span class="impact-stat">AI + Android</span>
               </div>
-              <p class="repo-desc">
-                Cross-library TestRules, ActivityScenarios, and configuration utilities to verify
-                Views, Activities, and Composables across locales, font sizes, themes, and orientations.
+              <h3 class="impact-title">Augmented Coding with AI</h3>
+              <p class="impact-desc">
+                Practical videos showing how to pair AI coding tools with Composable Previews,
+                TDD, and automated tests.
               </p>
             </div>
-            <div class="repo-foot">
-              <span>Kotlin &middot; Cross-Library Utils</span>
-              <span>View Repo &rarr;</span>
+            <div class="impact-foot">
+              <span>@sergio-sastre</span>
+              <span>Watch Videos &rarr;</span>
             </div>
           </a>
 
           <a
-            href="https://github.com/sergio-sastre/Multiplying_the_quality_of_unit_tests"
+            href="https://sergiosastre.hashnode.dev/tech-talks"
             target="_blank"
             rel="noopener noreferrer"
-            class="repo-card reveal"
+            class="impact-card reveal"
           >
             <div>
-              <div class="repo-top">
-                <h3 class="repo-name">Multiplying_the_quality_of_unit_tests</h3>
-                <span class="repo-stars">Kotlin</span>
+              <div class="impact-top">
+                <span class="impact-kicker">Speaking &amp; Writing</span>
+                <span class="impact-stat">Droidcon &middot; GDG</span>
               </div>
-              <p class="repo-desc">
-                Step-by-step Jetpack Compose showcase demonstrating how to level up unit tests with
-                parameterized tests, property-based testing, and stateful verification.
+              <h3 class="impact-title">Tech Talks, Podcasts &amp; Blog</h3>
+              <p class="impact-desc">
+                Conference sessions across Droidcon Berlin, London &amp; Lisbon plus in-depth
+                articles on Android UI &amp; unit testing.
               </p>
             </div>
-            <div class="repo-foot">
-              <span>Kotlin &middot; JUnit5 &amp; jqwik</span>
-              <span>View Repo &rarr;</span>
+            <div class="impact-foot">
+              <span>sergiosastre.hashnode.dev</span>
+              <span>Browse All &rarr;</span>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 04 / Speaking & Technical Writing -->
-    <section class="section section--bordered" id="speaking">
+    <!-- 03 / Compact Contact -->
+    <section class="section" id="contact">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="contact-box reveal">
           <div>
-            <span class="section-index">04 / Talks &amp; Writing</span>
-            <h2 class="section-title">Sharing battle-tested insights with the community.</h2>
-          </div>
-          <p class="section-lead">
-            Regular speaker at Droidcon conferences and GDG meetups across Europe, and author of
-            deep-dive technical guides on Android testing and UI architecture.
-          </p>
-        </div>
-
-        <div class="editorial-split">
-          <div class="reveal">
-            <h3 class="sub-heading">Selected Talks &amp; Conferences</h3>
-            <ul class="pub-list">
-              <li class="pub-item">
-                <a
-                  href="https://sessionize.com/sergio-sastre-florez/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">Composable Preview Driven Development with AI: TDD-fying your UI pAInlessly</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">next.app devCon &middot; GDG Munich</span>
-                </a>
-              </li>
-              <li class="pub-item">
-                <a
-                  href="https://www.youtube.com/watch?v=cDqdosrS83k"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">Composable Preview Driven Development: TDD-fying your UI with ease</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Droidcon Lisbon &middot; Video Recording</span>
-                </a>
-              </li>
-              <li class="pub-item">
-                <a
-                  href="https://speakerdeck.com/gio_sastre/mastering-screenshot-testing-libraries-for-android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">Mastering Screenshot Testing Libraries for Android</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Hands-On Workshop &middot; Speaker Deck</span>
-                </a>
-              </li>
-              <li class="pub-item">
-                <a
-                  href="https://sessionize.com/sergio-sastre-florez/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">An Introduction to Effective Snapshot Testing on Android</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Droidcon Berlin &middot; Droidcon London</span>
-                </a>
-              </li>
-            </ul>
+            <span class="section-index">03 / Get in Touch</span>
+            <h2 class="section-title">Ready to collaborate?</h2>
+            <div class="contact-meta">
+              <span>Munich, Germany</span>
+              <span>&middot;</span>
+              <span>Remote EU / On-Site</span>
+              <span>&middot;</span>
+              <span>ES / EN / DE</span>
+            </div>
+            <div class="contact-actions">
+              <a
+                href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+                id="contact-linkedin-btn"
+              >
+                Connect on LinkedIn
+                <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+              <a
+                href="https://sergiosastreflorez.wixsite.com/sergio-sastre-florez/resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--ghost"
+                id="contact-resume-btn"
+              >
+                View Resume
+              </a>
+            </div>
           </div>
 
-          <div class="reveal">
-            <h3 class="sub-heading">Featured Technical Articles</h3>
-            <ul class="pub-list">
-              <li class="pub-item">
-                <a
-                  href="https://sergiosastre.hashnode.dev/back-to-the-future-compose-previewing-your-xml-based-views"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">Back to the Future: Compose Previewing Your XML-Based Views</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Hashnode &middot; Migration &amp; Previews</span>
-                </a>
-              </li>
-              <li class="pub-item">
-                <a
-                  href="https://sergiosastre.hashnode.dev/design-a-pixel-perfect-android-app-with-screenshot-testing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">Design a Pixel-Perfect Android App with Screenshot Testing</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Hashnode &middot; Locales, Font Sizes &amp; Dark Mode</span>
-                </a>
-              </li>
-              <li class="pub-item">
-                <a
-                  href="https://sergiosastre.hashnode.dev/the-secrets-of-effectively-snapshot-testing-on-android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">The Secrets of Effectively Snapshot Testing on Android</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Hashnode &middot; Best Practices &amp; Pitfalls</span>
-                </a>
-              </li>
-              <li class="pub-item">
-                <a
-                  href="https://sergiosastre.hashnode.dev/better-unit-tests-with-parameterized-testing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="pub-link"
-                >
-                  <span class="pub-title">Better Unit Tests with Parameterized &amp; Property-Based Testing</span>
-                  <span class="pub-arrow" aria-hidden="true">&#8599;</span>
-                  <span class="pub-meta">Hashnode &middot; JUnit5 &amp; jqwik Series</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 / About & Process -->
-    <section class="section section--bordered" id="about">
-      <div class="container">
-        <div class="section-header reveal">
           <div>
-            <span class="section-index">05 / About</span>
-            <h2 class="section-title">Pragmatic engineering, built for the long run.</h2>
-          </div>
-          <p class="section-lead">
-            Based in Munich, partnering with product companies across Germany and Europe—remotely
-            or on-site.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-prose reveal">
-            <p>
-              I'm Sergio Sastre Flórez—a Google Developer Expert for Android, Lead Android Engineer,
-              and independent IT consultant with more than 13 years of hands-on experience building
-              high-traffic mobile applications.
-            </p>
-            <p>
-              Over the past decade, I've helped engineering organizations such as Deutsche Bahn
-              Systel, CHECK24, Lieferando, AutoScout24, and Hermes Germany modernize their Android
-              stacks, adopt Jetpack Compose safely, and establish fast, trustworthy testing
-              cultures.
-            </p>
-            <p>
-              My focus is simple: reduce the fear of change. When teams have clean UI architecture
-              and fast automated verification, shipping becomes calm, predictable, and genuinely
-              enjoyable. Outside of engineering, you'll find me playing football, running,
-              rollerblading, or snowboarding in the mountains.
-            </p>
-          </div>
-
-          <ol class="process-list reveal">
-            <li class="process-step">
-              <span class="process-step-num">Step 01</span>
-              <h3 class="process-step-title">Discovery Call</h3>
-              <p class="process-step-desc">
-                A focused 30-minute conversation to understand your codebase, bottlenecks, team
-                structure, and goals.
-              </p>
-            </li>
-            <li class="process-step">
-              <span class="process-step-num">Step 02</span>
-              <h3 class="process-step-title">Tailored Proposal</h3>
-              <p class="process-step-desc">
-                Clear scope, timeline, and format—whether an embedded consulting engagement, a
-                custom team workshop, or a fixed-scope audit.
-              </p>
-            </li>
-            <li class="process-step">
-              <span class="process-step-num">Step 03</span>
-              <h3 class="process-step-title">Hands-On Delivery</h3>
-              <p class="process-step-desc">
-                Direct collaboration inside your repositories and workflows so your engineers own
-                every pattern long after the engagement wraps.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 / Contact (Dark Petrol Band) -->
-    <section class="section section--dark" id="contact">
-      <div class="container">
-        <div class="section-header reveal">
-          <div>
-            <span class="section-index">06 / Get in Touch</span>
-            <h2 class="section-title">Let's make your Android team faster and more confident.</h2>
-          </div>
-          <p class="section-lead">
-            Available for freelance Android consulting, hands-on team workshops, architecture
-            reviews, and conference speaking invitations.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="reveal">
-            <p style="margin-top: 0; color: var(--dark-ink-secondary); max-width: 44ch;">
-              Reach out directly on LinkedIn for consulting and training inquiries, or explore my
-              open-source work, talks, and technical writing across the web.
-            </p>
-
-            <ul class="contact-channels">
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="channel-link"
-                  id="contact-linkedin"
-                >
-                  <span class="channel-name">LinkedIn</span>
-                  <span class="channel-handle">in/sergio-sastre-florez &rarr;</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/sergio-sastre"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="channel-link"
-                  id="contact-github"
-                >
-                  <span class="channel-name">GitHub</span>
-                  <span class="channel-handle">@sergio-sastre &rarr;</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://sergiosastre.hashnode.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="channel-link"
-                  id="contact-blog"
-                >
-                  <span class="channel-name">Technical Blog</span>
-                  <span class="channel-handle">sergiosastre.hashnode.dev &rarr;</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/Gio_Sastre"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="channel-link"
-                  id="contact-x"
-                >
-                  <span class="channel-name">X (Twitter)</span>
-                  <span class="channel-handle">@Gio_Sastre &rarr;</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://sessionize.com/sergio-sastre-florez/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="channel-link"
-                  id="contact-sessionize"
-                >
-                  <span class="channel-name">Speaker Profile</span>
-                  <span class="channel-handle">Sessionize &rarr;</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="inquiry-card reveal">
-            <h3 class="inquiry-title">Draft a quick inquiry</h3>
-            <p class="inquiry-note">
-              Select a topic and outline what you're looking for. Submitting copies your brief and
-              opens LinkedIn so you can send it right away.
-            </p>
-
             <div class="topic-group" role="group" aria-label="Inquiry topic">
               <button type="button" class="topic-chip is-selected" data-topic="Android Consulting" aria-pressed="true">
-                Android Consulting
+                Consulting
               </button>
               <button type="button" class="topic-chip" data-topic="Team Workshop" aria-pressed="false">
-                Team Workshop
+                Workshop
               </button>
-              <button type="button" class="topic-chip" data-topic="Architecture Review" aria-pressed="false">
-                Architecture Review
+              <button type="button" class="topic-chip" data-topic="Testing & AI Audit" aria-pressed="false">
+                Testing &amp; AI
               </button>
               <button type="button" class="topic-chip" data-topic="Conference Talk" aria-pressed="false">
-                Conference Talk
+                Speaking
               </button>
             </div>
 
             <form id="inquiry-form" class="form-grid" novalidate>
               <div class="field">
-                <label for="inquiry-name">Your Name</label>
-                <input type="text" id="inquiry-name" name="name" placeholder="Alex Meyer" autocomplete="name">
+                <input
+                  type="text"
+                  id="inquiry-name"
+                  name="name"
+                  placeholder="Your name &amp; company"
+                  aria-label="Your name and company"
+                  autocomplete="name"
+                >
               </div>
-
               <div class="field">
-                <label for="inquiry-company">Company / Team (optional)</label>
-                <input type="text" id="inquiry-company" name="company" placeholder="Acme Mobile" autocomplete="organization">
-              </div>
-
-              <div class="field">
-                <label for="inquiry-message">How can I help?</label>
                 <textarea
                   id="inquiry-message"
                   name="message"
-                  placeholder="Tell me briefly about your team size, stack (Compose / XML / KMP), and timeline..."
+                  placeholder="Briefly describe your project, workshop, or talk..."
+                  aria-label="Message"
                 ></textarea>
               </div>
-
               <div class="form-actions">
-                <button type="submit" class="btn btn--copper" id="submit-inquiry-btn">
-                  Copy &amp; Message on LinkedIn
-                  <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+                <button type="submit" class="btn btn--dark btn--sm" id="submit-inquiry-btn">
+                  Copy &amp; Open LinkedIn &rarr;
                 </button>
-                <button type="button" class="btn btn--ghost-dark" id="copy-brief-btn">
-                  Copy Brief Only
+                <button type="button" class="btn btn--ghost btn--sm" id="copy-brief-btn">
+                  Copy Brief
                 </button>
               </div>
               <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -965,15 +538,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>
-        &copy; <span id="current-year">2026</span> Sergio Sastre Flórez &middot; IT Consulting &amp; Training &middot; Munich, Germany
-      </div>
+      <div>&copy; <span id="current-year">2026</span> Sergio Sastre Flórez &middot; Munich, Germany</div>
       <div class="footer-links">
-        <a href="#services">Consulting</a>
-        <a href="#training">Training</a>
-        <a href="#open-source">Open Source</a>
-        <a href="https://github.com/sergio-sastre" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/sergio-sastre-florez-75b62754/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/sergio-sastre" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.youtube.com/@sergio-sastre" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://sergiosastre.hashnode.dev/" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="https://x.com/Gio_Sastre" target="_blank" rel="noopener noreferrer">X</a>
       </div>
     </div>
   </footer>
