@@ -321,13 +321,13 @@ button {
 
 .profile-card {
   position: relative;
-  background: var(--card-cream);
+  background: linear-gradient(165deg, #1b2432 0%, #111827 100%);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   overflow: hidden;
   box-shadow:
-    -18px 28px 56px -20px rgba(17, 24, 39, 0.22),
-    0 4px 12px rgba(17, 24, 39, 0.05);
+    -18px 30px 60px -16px rgba(17, 24, 39, 0.36),
+    0 6px 16px rgba(17, 24, 39, 0.14);
   text-align: center;
   max-width: 370px;
   width: 100%;
@@ -344,7 +344,7 @@ button {
   opacity: 0;
   background: radial-gradient(
     circle 260px at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 255, 255, 0.32),
+    rgba(255, 255, 255, 0.14),
     transparent 70%
   );
   transition: opacity 220ms ease;
@@ -353,8 +353,8 @@ button {
 .profile-card.is-tilting {
   transition: transform 60ms linear, box-shadow 200ms ease;
   box-shadow:
-    0 32px 64px -18px rgba(17, 24, 39, 0.28),
-    0 6px 16px rgba(17, 24, 39, 0.08);
+    0 34px 70px -16px rgba(17, 24, 39, 0.44),
+    0 8px 20px rgba(17, 24, 39, 0.18);
 }
 
 .profile-card.is-tilting::after {
@@ -366,16 +366,16 @@ button {
   position: relative;
 }
 
-/* Subtle warm sunset halo echoing the portrait background */
+/* Warm sunset halo popping crisply against the deep slate card */
 .avatar-halo {
   position: relative;
   width: 184px;
   height: 184px;
   margin: 0 auto 1.55rem;
   border-radius: 50%;
-  padding: 5px;
-  background: linear-gradient(135deg, #f59e0b 0%, #fb923c 45%, #0f52ff 100%);
-  box-shadow: 0 18px 36px -14px rgba(234, 88, 12, 0.32);
+  padding: 4px;
+  background: linear-gradient(135deg, #f59e0b 0%, #fb923c 48%, #3b82f6 100%);
+  box-shadow: 0 18px 36px -12px rgba(245, 158, 11, 0.35);
 }
 
 .avatar-inner {
@@ -383,7 +383,7 @@ button {
   height: 100%;
   border-radius: 50%;
   padding: 4px;
-  background: var(--white);
+  background: #141c28;
 }
 
 .avatar-img {
@@ -400,13 +400,13 @@ button {
   line-height: 1.12;
   letter-spacing: -0.02em;
   margin: 0;
-  color: var(--ink-950);
+  color: var(--white);
 }
 
 .profile-rule {
   width: 44px;
   height: 3px;
-  background: var(--cobalt-600);
+  background: #3b82f6;
   margin: 1.15rem auto;
   border-radius: 999px;
 }
@@ -417,7 +417,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-700);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
   line-height: 1.65;
 }
@@ -436,13 +436,13 @@ button {
   align-items: center;
   gap: 0.35rem;
   padding: 0.3rem 0.78rem;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
-  color: var(--ink-700);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .meta-pill--live::before {
@@ -450,7 +450,7 @@ button {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #10b981;
+  background: #34d399;
 }
 
 .profile-socials {
@@ -459,8 +459,8 @@ button {
   justify-content: center;
   gap: 0.75rem;
   padding: 1.05rem 1.5rem;
-  background: var(--white);
-  border-top: 1px solid rgba(17, 24, 39, 0.05);
+  background: rgba(0, 0, 0, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .social-btn {
@@ -470,8 +470,8 @@ button {
   width: 2.45rem;
   height: 2.45rem;
   border-radius: 50%;
-  color: var(--ink-950);
-  background: var(--off-white);
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.08);
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
