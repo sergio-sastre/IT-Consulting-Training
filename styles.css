@@ -661,12 +661,12 @@ button {
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
-  padding: clamp(1.6rem, 3.5vw, 2.4rem);
+  padding: clamp(1.6rem, 3.5vw, 2.25rem);
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.75rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.15rem;
   box-shadow: 0 20px 44px -32px rgba(17, 24, 39, 0.22);
 }
 
@@ -691,24 +691,19 @@ button {
   );
 }
 
-@media (min-width: 620px) {
-  .award-card {
-    grid-template-columns: 210px 1fr;
-  }
-}
-
 .award-badge-box {
+  width: 100%;
   background: var(--pure-white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
-  padding: 1.25rem;
+  padding: 1.35rem 1.5rem;
   display: grid;
   place-items: center;
 }
 
 .award-badge-img {
   width: 100%;
-  max-width: 215px;
+  max-width: 240px;
   height: auto;
 }
 
@@ -732,14 +727,20 @@ button {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 0.55rem;
+  margin: 0;
   line-height: 1.2;
 }
 
 .award-desc {
-  margin: 0 0 1.1rem;
+  margin: 0;
   font-size: 0.94rem;
   color: var(--ink-700);
+  line-height: 1.6;
+}
+
+.award-actions {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* 2. Google Developer Expert for Android Card */
