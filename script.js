@@ -70,10 +70,9 @@
       const rect = profileCard.getBoundingClientRect();
       const px = (event.clientX - rect.left) / rect.width;
       const py = (event.clientY - rect.top) / rect.height;
-
-      targetY = (px - 0.5) * 14;
-      targetX = (0.5 - py) * 14;
-      targetScale = 1.02;
+      targetY = (px - 0.5) * 7;
+      targetX = (0.5 - py) * 7;
+      targetScale = 1.01;
 
       profileCard.classList.add('is-tilting');
       profileCard.style.setProperty('--mx', `${(px * 100).toFixed(1)}%`);
