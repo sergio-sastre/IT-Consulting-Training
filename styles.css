@@ -651,7 +651,7 @@ button {
 
 @media (min-width: 900px) {
   .bento-grid {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -742,86 +742,87 @@ button {
   color: var(--ink-700);
 }
 
-/* 2. High-Contrast Quality-First Manifesto Card */
-.quality-card {
-  background: linear-gradient(160deg, #133a2b 0%, #0b241a 100%);
-  color: var(--pure-white);
+/* 2. Google Developer Expert for Android Card */
+.gde-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   padding: clamp(1.6rem, 3.5vw, 2.25rem);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.25rem;
-  box-shadow: 0 24px 48px -28px rgba(11, 36, 26, 0.52);
+  gap: 1.35rem;
+  box-shadow: 0 20px 44px -32px rgba(17, 24, 39, 0.22);
 }
 
-.quality-kicker {
+.gde-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #4285f4 0%,
+    #4285f4 25%,
+    #ea4335 25%,
+    #ea4335 50%,
+    #fbbc05 50%,
+    #fbbc05 75%,
+    #34a853 75%,
+    #34a853 100%
+  );
+}
+
+.gde-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #3ddc84;
-}
-
-.quality-title {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin: 0.35rem 0 0;
-}
-
-.quality-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.quality-tab {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.8);
-  padding: 0.38rem 0.78rem;
+  color: var(--emerald-700, #135038);
+  background: var(--emerald-tint, rgba(29, 114, 80, 0.1));
+  padding: 0.26rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 160ms ease;
+  margin-bottom: 0.75rem;
 }
 
-.quality-tab:hover {
-  background: rgba(255, 255, 255, 0.16);
-  color: var(--white);
-}
-
-.quality-tab.is-active {
-  background: #3ddc84;
-  border-color: #3ddc84;
-  color: #0b241a;
-}
-
-.quality-panel {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-sm);
-  padding: 1rem 1.15rem;
-  min-height: 6.5rem;
-}
-
-.quality-panel-title {
+.gde-title {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin: 0 0 0.35rem;
-  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
 }
 
-.quality-panel-text {
+.gde-desc {
   margin: 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.55;
+  font-size: 0.94rem;
+  color: var(--ink-700);
+  line-height: 1.6;
+}
+
+.gde-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.gde-badge-img {
+  width: 100%;
+  aspect-ratio: 600 / 213;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+  box-shadow: 0 4px 12px -6px rgba(17, 24, 39, 0.16);
 }
 
 /* Second Row: 2 Asymmetric Proof Cards */

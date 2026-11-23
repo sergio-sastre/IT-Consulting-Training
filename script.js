@@ -89,45 +89,7 @@
     });
   }
 
-  // 3. Interactive Quality-First Pillar Switcher
-  const qualityContent = {
-    testing: {
-      title: 'Zero Visual Regressions',
-      text: 'Deterministic Paparazzi, Roborazzi & Preview verification across themes, locales, font scales, and accessibility—before code ever merges.'
-    },
-    cpdd: {
-      title: 'Composable Preview Driven Development',
-      text: 'Turn @Preview functions into living UI specifications and automated tests, enabling rapid refactoring with complete confidence.'
-    },
-    ai: {
-      title: 'Augmented Coding with AI',
-      text: 'Pair AI coding workflows with strict TDD and automated verification loops to multiply engineering velocity without sacrificing quality.'
-    }
-  };
-
-  const qualityTabs = Array.from(document.querySelectorAll('.quality-tab'));
-  const qualityPanel = document.getElementById('quality-panel');
-
-  qualityTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const key = tab.dataset.qtab;
-      const data = qualityContent[key];
-      if (!data || !qualityPanel) return;
-
-      qualityTabs.forEach((t) => {
-        const active = t === tab;
-        t.classList.toggle('is-active', active);
-        t.setAttribute('aria-selected', String(active));
-      });
-
-      const titleEl = qualityPanel.querySelector('.quality-panel-title');
-      const textEl = qualityPanel.querySelector('.quality-panel-text');
-      if (titleEl) titleEl.textContent = data.title;
-      if (textEl) textEl.textContent = data.text;
-    });
-  });
-
-  // 4. Copyright Year
+  // 3. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
