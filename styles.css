@@ -743,6 +743,11 @@ button {
   flex-wrap: wrap;
 }
 
+.award-actions .btn {
+  width: 100%;
+  text-align: center;
+}
+
 /* 2. Google Developer Expert for Android Card */
 .gde-card {
   position: relative;
