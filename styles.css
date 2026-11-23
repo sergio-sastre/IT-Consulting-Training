@@ -48,6 +48,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -57,7 +59,8 @@ body {
   font-family: var(--font-sans);
   font-size: 1.02rem;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 img {
@@ -121,16 +124,17 @@ button {
   align-items: center;
   justify-content: space-between;
   min-height: 4.5rem;
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.55rem;
+  min-width: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.08rem;
+  font-size: clamp(0.92rem, 3.6vw, 1.08rem);
   letter-spacing: -0.02em;
 }
 
@@ -139,6 +143,7 @@ button {
   place-items: center;
   width: 2rem;
   height: 2rem;
+  flex-shrink: 0;
   border-radius: 8px;
   background: var(--ink-950);
   color: var(--white);
@@ -169,10 +174,16 @@ button {
 .header-nav {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: clamp(0.85rem, 2.2vw, 1.6rem);
 }
 
+.header-nav .btn--sm {
+  white-space: nowrap;
+}
+
 .nav-pill {
+  display: none;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--ink-700);
@@ -186,6 +197,23 @@ button {
   color: var(--cobalt-600);
 }
 
+@media (min-width: 640px) {
+  .header-inner {
+    gap: 1.5rem;
+  }
+
+  .nav-pill {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 419px) {
+  .header-nav .btn--sm {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.76rem;
+  }
+}
+
 /* ==========================================================================
    Buttons
    ========================================================================== */
@@ -193,6 +221,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
   gap: 0.5rem;
   padding: 0.78rem 1.75rem;
   border-radius: 999px;
@@ -251,6 +280,9 @@ button {
 .link-chip {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
   gap: 0.22rem;
   padding: 0.06em 0.52em;
   margin-inline: 0.06em;
@@ -291,6 +323,7 @@ button {
    ========================================================================== */
 .hero {
   position: relative;
+  overflow-x: clip;
   padding-block: clamp(3rem, 7vw, 5.5rem);
   background: linear-gradient(180deg, var(--sand-bg) 0%, var(--sand-bg) 320px, var(--white) 320px, var(--white) 100%);
 }
@@ -304,19 +337,20 @@ button {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 4.5rem);
   align-items: center;
 }
 
 @media (min-width: 920px) {
   .hero-grid {
-    grid-template-columns: 370px 1fr;
+    grid-template-columns: 370px minmax(0, 1fr);
   }
 }
 
 /* Signature Floating Profile Card with Interactive Tilt */
 .card-stage {
+  min-width: 0;
   perspective: 1000px;
 }
 
@@ -515,6 +549,7 @@ button {
 
 /* Hero Right Column */
 .hero-content {
+  min-width: 0;
   max-width: 600px;
 }
 
@@ -611,6 +646,7 @@ button {
    Credibility & Quality-First Bento Section
    ========================================================================== */
 .credibility {
+  overflow-x: clip;
   background: var(--off-white);
   border-top: 1px solid var(--rule);
   padding-block: clamp(3.75rem, 7vw, 5.75rem);
@@ -645,19 +681,20 @@ button {
 /* Asymmetric Bento Grid */
 .bento-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.35rem;
 }
 
 @media (min-width: 900px) {
   .bento-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* 1. 2024 Google Open Source Peer Bonus Feature Card */
 .award-card {
   position: relative;
+  min-width: 0;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -751,6 +788,7 @@ button {
 /* 2. Google Developer Expert for Android Card */
 .gde-card {
   position: relative;
+  min-width: 0;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -861,18 +899,19 @@ button {
 /* Second Row: 2 Asymmetric Proof Cards */
 .bento-bottom {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.35rem;
   margin-top: 1.35rem;
 }
 
 @media (min-width: 900px) {
   .bento-bottom {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 .proof-card {
+  min-width: 0;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -976,6 +1015,7 @@ button {
    Footer
    ========================================================================== */
 .site-footer {
+  overflow-x: clip;
   background: var(--white);
   border-top: 1px solid var(--rule);
   padding-block: 2rem;
