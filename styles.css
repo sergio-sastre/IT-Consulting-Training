@@ -689,6 +689,20 @@ button {
   .bento-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .gde-card,
+  .award-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: 1.15rem;
+  }
+
+  .gde-links,
+  .award-actions {
+    align-self: end;
+  }
 }
 
 /* 1. 2024 Google Open Source Peer Bonus Feature Card */
@@ -851,6 +865,8 @@ button {
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: 0.85rem;
+  display: grid;
+  align-items: center;
 }
 
 .gde-badges-grid {
