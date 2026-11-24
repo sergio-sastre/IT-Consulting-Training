@@ -257,7 +257,7 @@ button {
 }
 
 .btn--outline {
-  background: var(--white);
+  background: var(--pure-white);
   border-color: var(--rule-strong);
   color: var(--ink-950);
 }
@@ -828,8 +828,8 @@ button {
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: var(--white);
-  border: 1px solid var(--rule);
+  background: var(--pure-white);
+  border: 1px solid rgba(11, 51, 34, 0.12);
   border-radius: var(--radius-lg);
   padding: clamp(1.6rem, 3.5vw, 2.25rem);
   overflow: hidden;
@@ -837,7 +837,7 @@ button {
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.15rem;
-  box-shadow: 0 20px 44px -32px rgba(17, 24, 39, 0.22);
+  box-shadow: 0 22px 48px -32px rgba(11, 51, 34, 0.22);
 }
 
 /* Signature 4-color Google hairline bar */
@@ -863,7 +863,7 @@ button {
 
 .award-badge-box {
   width: 100%;
-  background: var(--pure-white);
+  background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: 1.35rem 1.5rem;
@@ -875,6 +875,7 @@ button {
   width: 100%;
   max-width: 240px;
   height: auto;
+  mix-blend-mode: multiply;
 }
 
 .award-pill {
@@ -930,8 +931,8 @@ button {
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: var(--white);
-  border: 1px solid var(--rule);
+  background: var(--pure-white);
+  border: 1px solid rgba(11, 51, 34, 0.12);
   border-radius: var(--radius-lg);
   padding: clamp(1.6rem, 3.5vw, 2.25rem);
   overflow: hidden;
@@ -939,7 +940,7 @@ button {
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.15rem;
-  box-shadow: 0 20px 44px -32px rgba(17, 24, 39, 0.22);
+  box-shadow: 0 22px 48px -32px rgba(11, 51, 34, 0.22);
 }
 
 .gde-card::before {
@@ -988,7 +989,7 @@ button {
 
 .gde-badges-box {
   width: 100%;
-  background: var(--off-white);
+  background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: 0.85rem;
@@ -1061,14 +1062,15 @@ button {
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: var(--white);
-  border: 1px solid var(--rule);
+  background: var(--pure-white);
+  border: 1px solid rgba(11, 51, 34, 0.12);
   border-radius: var(--radius-lg);
   padding: clamp(1.5rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1.1rem;
+  box-shadow: 0 20px 44px -32px rgba(11, 51, 34, 0.18);
   transition: box-shadow 220ms var(--ease-out), border-color 220ms ease;
 }
 
@@ -1123,7 +1125,7 @@ button {
 }
 
 .clients-logo-tray {
-  background: var(--pure-white);
+  background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: clamp(1.5rem, 3vw, 2.25rem);
@@ -1191,7 +1193,7 @@ button {
 
 /* Open Source & AI Tooling Ecosystem Card */
 .oss-tray {
-  background: var(--pure-white);
+  background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   padding: 0.95rem;
@@ -1252,7 +1254,7 @@ button {
   gap: 0.5rem;
   padding: 0.52rem 0.72rem;
   border-radius: 11px;
-  background: var(--white);
+  background: var(--pure-white);
   border: 1px solid var(--rule);
   transition:
     background-color 180ms var(--ease-out),
