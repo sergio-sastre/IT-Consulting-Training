@@ -948,7 +948,6 @@ button {
 }
 
 .proof-card:hover {
-  transform: translateY(-3px);
   border-color: var(--rule-strong);
   box-shadow: 0 20px 38px -28px rgba(17, 24, 39, 0.22);
 }
