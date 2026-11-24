@@ -89,7 +89,32 @@
     });
   }
 
-  // 3. Copyright Year
+  // 3. Sync GDE & Peer Bonus badge box heights on desktop
+  const gdeBadgesBox = document.querySelector('.gde-badges-box');
+  const awardBadgeBox = document.querySelector('.award-badge-box');
+
+  if (gdeBadgesBox && awardBadgeBox) {
+    const syncBadgeBoxHeights = () => {
+      gdeBadgesBox.style.minHeight = '';
+      awardBadgeBox.style.minHeight = '';
+
+      if (window.innerWidth >= 900) {
+        const maxHeight = Math.max(
+          gdeBadgesBox.getBoundingClientRect().height,
+          awardBadgeBox.getBoundingClientRect().height
+        );
+        const target = `${Math.ceil(maxHeight)}px`;
+        gdeBadgesBox.style.minHeight = target;
+        awardBadgeBox.style.minHeight = target;
+      }
+    };
+
+    syncBadgeBoxHeights();
+    window.addEventListener('resize', syncBadgeBoxHeights);
+    window.addEventListener('load', syncBadgeBoxHeights);
+  }
+
+  // 4. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());

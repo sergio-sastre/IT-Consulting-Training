@@ -689,20 +689,6 @@ button {
   .bento-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .gde-card,
-  .award-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-row: span 4;
-    grid-template-rows: subgrid;
-    row-gap: 1.15rem;
-  }
-
-  .gde-links,
-  .award-actions {
-    align-self: end;
-  }
 }
 
 /* 1. 2024 Google Open Source Peer Bonus Feature Card */
@@ -792,10 +778,12 @@ button {
 .award-actions {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .award-actions .btn {
   width: 100%;
+  flex: 1 1 100%;
   text-align: center;
 }
 
@@ -923,14 +911,6 @@ button {
 @media (min-width: 900px) {
   .bento-bottom {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .bento-bottom > .proof-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-row: span 2;
-    grid-template-rows: subgrid;
-    row-gap: 1rem;
   }
 }
 
