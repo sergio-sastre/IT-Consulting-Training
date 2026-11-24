@@ -695,6 +695,7 @@ button {
 .award-card {
   position: relative;
   min-width: 0;
+  contain: layout style;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -702,7 +703,7 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1.15rem;
   box-shadow: 0 20px 44px -32px rgba(17, 24, 39, 0.22);
 }
@@ -779,6 +780,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: auto;
 }
 
 .award-actions .btn {
@@ -791,6 +793,7 @@ button {
 .gde-card {
   position: relative;
   min-width: 0;
+  contain: layout style;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -798,7 +801,7 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1.15rem;
   box-shadow: 0 20px 44px -32px rgba(17, 24, 39, 0.22);
 }
@@ -891,6 +894,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  margin-top: auto;
 }
 
 .gde-links .link-chip {
@@ -916,6 +920,7 @@ button {
 
 .proof-card {
   min-width: 0;
+  contain: layout style;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -924,7 +929,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   gap: 1.1rem;
-  transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out), border-color 220ms ease;
+  transition: box-shadow 220ms var(--ease-out), border-color 220ms ease;
 }
 
 .proof-card:hover {
@@ -1290,7 +1295,7 @@ button {
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

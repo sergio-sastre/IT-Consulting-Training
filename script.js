@@ -10,8 +10,12 @@
       (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
+            const el = entry.target;
+            el.classList.add('is-visible');
+            obs.unobserve(el);
+            window.setTimeout(() => {
+              el.classList.remove('reveal', 'is-visible');
+            }, 600);
           }
         });
       },
@@ -20,7 +24,7 @@
 
     revealElements.forEach((el) => observer.observe(el));
   } else {
-    revealElements.forEach((el) => el.classList.add('is-visible'));
+    revealElements.forEach((el) => el.classList.remove('reveal'));
   }
 
   // 2. Silky-Smooth 3D Tilt on the Floating Profile Card (rAF lerp)
