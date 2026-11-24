@@ -976,10 +976,11 @@ button {
 
 .proof-star {
   color: #e59500;
-  font-size: 0.88em;
-  display: inline-block;
-  transform: translateY(-1px);
-  text-shadow: 0 3px 12px rgba(245, 158, 11, 0.28);
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 3px 8px rgba(245, 158, 11, 0.28));
 }
 
 .clients-card .proof-label,
@@ -1160,15 +1161,23 @@ button {
 }
 
 .oss-star-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
   color: #9a6200;
   background: rgba(245, 158, 11, 0.14);
   border: 1px solid rgba(245, 158, 11, 0.26);
-  padding: 0.12rem 0.45rem;
+  padding: 0.16rem 0.48rem;
   border-radius: 999px;
   line-height: 1.35;
+}
+
+.oss-star-icon {
+  color: #d98800;
+  flex-shrink: 0;
 }
 
 .oss-arrow {
