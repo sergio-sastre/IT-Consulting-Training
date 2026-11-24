@@ -696,6 +696,10 @@ button {
   position: relative;
   min-width: 0;
   contain: layout style;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -794,6 +798,10 @@ button {
   position: relative;
   min-width: 0;
   contain: layout style;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -921,6 +929,10 @@ button {
 .proof-card {
   min-width: 0;
   contain: layout style;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background: var(--white);
   border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
@@ -1295,7 +1307,7 @@ button {
 
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
