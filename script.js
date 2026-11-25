@@ -236,7 +236,87 @@
     });
   }
 
-  // 8. Copyright Year
+  // 8. Micro Data-Visualizations & Interactive Proportional Career Ribbon
+  const releaseGrid = document.getElementById('viz-release-grid');
+  if (releaseGrid) {
+    // 54 months (4.5 years): 3 amber hotfix markers across the span
+    const hotfixIndices = new Set([11, 29, 44]);
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 54; i += 1) {
+      const tick = document.createElement('span');
+      tick.className = hotfixIndices.has(i) ? 'viz-tick viz-tick--hotfix' : 'viz-tick';
+      frag.appendChild(tick);
+    }
+    releaseGrid.appendChild(frag);
+  }
+
+  const dotMatrix = document.getElementById('viz-dot-matrix');
+  if (dotMatrix) {
+    // 80 dots (4 rows x 20) representing 80+ engineers trained
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 80; i += 1) {
+      const dot = document.createElement('span');
+      dot.className = i >= 74 ? 'viz-dot viz-dot--bright' : 'viz-dot';
+      frag.appendChild(dot);
+    }
+    dotMatrix.appendChild(frag);
+  }
+
+  const ribbonCurrent = document.querySelector('[data-ribbon-start]');
+  if (ribbonCurrent) {
+    const raw = ribbonCurrent.getAttribute('data-ribbon-start') || '';
+    const match = /^(\d{4})-(\d{2})$/.exec(raw);
+    if (match) {
+      const now = new Date();
+      const totalMonths = Math.max(
+        1,
+        (now.getFullYear() - Number(match[1])) * 12 + (now.getMonth() + 1 - Number(match[2])) + 1
+      );
+      ribbonCurrent.style.flexGrow = String(totalMonths);
+      const yrs = Math.floor(totalMonths / 12);
+      const mos = totalMonths % 12;
+      const shortDur = [yrs > 0 ? `${yrs}y` : '', mos > 0 ? `${mos}m` : ''].filter(Boolean).join(' ');
+      const longDur = [
+        yrs > 0 ? `${yrs} ${yrs === 1 ? 'yr' : 'yrs'}` : '',
+        mos > 0 ? `${mos} ${mos === 1 ? 'mo' : 'mos'}` : ''
+      ].filter(Boolean).join(' ');
+
+      const labelEl = ribbonCurrent.querySelector('[data-ribbon-label]');
+      if (labelEl) {
+        const base = labelEl.getAttribute('data-ribbon-label') || 'Current';
+        labelEl.textContent = `${base} · ${shortDur}`;
+      }
+      ribbonCurrent.setAttribute(
+        'data-tooltip',
+        `Deutsche Bahn Systel · Aug 2023–Present (${longDur})`
+      );
+    }
+  }
+
+  const ribbonSegments = document.querySelectorAll('.ribbon-seg[data-jump]');
+  if (ribbonSegments.length > 0) {
+    const allFilterPill = document.querySelector('.filter-pill[data-filter="all"]');
+    ribbonSegments.forEach((seg) => {
+      seg.addEventListener('click', () => {
+        const selector = seg.getAttribute('data-jump');
+        if (!selector) return;
+        const target = document.querySelector(selector);
+        if (!target) return;
+
+        if (target.hidden && allFilterPill) {
+          allFilterPill.click();
+        }
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const card = target.querySelector('.exp-card') || target;
+        card.classList.remove('is-jump-highlight');
+        void card.offsetWidth;
+        card.classList.add('is-jump-highlight');
+      });
+    });
+  }
+
+  // 9. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());

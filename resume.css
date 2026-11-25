@@ -213,6 +213,328 @@
   color: var(--ink-500);
 }
 
+/* Micro Data-Visualizations inside Achievement Cards */
+.impact-viz {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.viz-release-grid {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.viz-tick {
+  height: 9px;
+  border-radius: 2px;
+  background: var(--cobalt-600);
+  opacity: 0.85;
+}
+
+.viz-tick--hotfix {
+  background: #f59e0b;
+  opacity: 1;
+}
+
+.viz-dot-matrix {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: 3px;
+  align-items: center;
+}
+
+.viz-dot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 7px;
+  border-radius: 50%;
+  background: var(--cobalt-600);
+  opacity: 0.82;
+}
+
+.viz-dot--bright {
+  background: #3ddc84;
+  opacity: 1;
+}
+
+.viz-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: var(--ink-500);
+}
+
+.viz-caption-amber {
+  color: #b45309;
+  font-weight: 600;
+}
+
+.viz-caption-accent {
+  color: var(--cobalt-700);
+  font-weight: 600;
+}
+
+.viz-bars,
+.viz-lanes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.36rem;
+}
+
+.viz-bar-row,
+.viz-lane-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.viz-bar-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: var(--ink-500);
+}
+
+.viz-bar-label--strong {
+  color: var(--ink-950);
+  font-weight: 600;
+}
+
+.viz-bar-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--off-white);
+  overflow: hidden;
+}
+
+.viz-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.viz-bar-fill--muted {
+  background: rgba(11, 51, 34, 0.2);
+}
+
+.viz-bar-fill--accent {
+  background: linear-gradient(90deg, var(--cobalt-600) 0%, #3ddc84 100%);
+}
+
+.viz-bar-val {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-align: right;
+  color: var(--ink-500);
+}
+
+.viz-bar-val--accent {
+  color: var(--cobalt-700);
+  font-weight: 600;
+}
+
+/* Proportional Career Span Ribbon (2014 - Present) */
+.career-ribbon-card {
+  background: var(--pure-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem 0.95rem;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+  box-shadow: 0 14px 32px -28px rgba(11, 51, 34, 0.18);
+}
+
+.career-ribbon-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.72rem;
+}
+
+.career-ribbon-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cobalt-700);
+}
+
+.career-ribbon-hint {
+  font-size: 0.78rem;
+  color: var(--ink-500);
+}
+
+.career-ribbon-bar {
+  display: flex;
+  width: 100%;
+  height: 36px;
+  gap: 3px;
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.ribbon-seg {
+  position: relative;
+  flex-basis: 0;
+  min-width: 14px;
+  border: 0;
+  padding: 0 0.4rem;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 180ms var(--ease-out), filter 180ms ease, box-shadow 180ms ease;
+}
+
+.ribbon-seg:hover,
+.ribbon-seg:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 8px 18px -10px rgba(11, 51, 34, 0.45);
+  z-index: 4;
+}
+
+.ribbon-seg::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  padding: 0.34rem 0.65rem;
+  border-radius: 8px;
+  background: var(--ink-950);
+  color: var(--pure-white);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease, transform 160ms var(--ease-out);
+  box-shadow: 0 10px 24px -10px rgba(11, 51, 34, 0.55);
+  z-index: 20;
+}
+
+.ribbon-seg:first-child::after {
+  left: 0;
+  transform: translateY(4px);
+}
+
+.ribbon-seg:last-child::after {
+  left: auto;
+  right: 0;
+  transform: translateY(4px);
+}
+
+.ribbon-seg:hover::after,
+.ribbon-seg:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.ribbon-seg:first-child:hover::after,
+.ribbon-seg:first-child:focus-visible::after,
+.ribbon-seg:last-child:hover::after,
+.ribbon-seg:last-child:focus-visible::after {
+  transform: translateY(0);
+}
+
+.ribbon-seg-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 639px) {
+  .ribbon-seg-label {
+    display: none;
+  }
+
+  .ribbon-seg--s3 .ribbon-seg-label,
+  .ribbon-seg--current .ribbon-seg-label {
+    display: inline;
+    font-size: 0.68rem;
+  }
+}
+
+.ribbon-seg--s1 {
+  background: #d7ede2;
+  color: var(--ink-800);
+}
+
+.ribbon-seg--s2 {
+  background: #b7e1cc;
+  color: var(--ink-950);
+}
+
+.ribbon-seg--s3 {
+  background: #168a59;
+  color: var(--pure-white);
+}
+
+.ribbon-seg--s4 {
+  background: #8fd1b1;
+  color: var(--ink-950);
+}
+
+.ribbon-seg--s5 {
+  background: #2f9e6f;
+  color: var(--pure-white);
+}
+
+.ribbon-seg--s6 {
+  background: #c4e4d4;
+  color: var(--ink-800);
+}
+
+.ribbon-seg--current {
+  background: linear-gradient(135deg, #1d7250 0%, #0b3322 100%);
+  color: #a7f3c8;
+  border: 1px solid rgba(61, 220, 132, 0.35);
+}
+
+.career-ribbon-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  color: var(--ink-500);
+}
+
+/* Smooth highlight pulse when jumping from Career Ribbon */
+.is-jump-highlight {
+  animation: jumpPulse 1.3s var(--ease-out);
+}
+
+@keyframes jumpPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 138, 89, 0.45);
+    border-color: var(--cobalt-600);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(22, 138, 89, 0.12);
+    border-color: var(--cobalt-600);
+  }
+  100% {
+    box-shadow: 0 18px 40px -32px rgba(11, 51, 34, 0.2);
+  }
+}
+
 /* ==========================================================================
    2. Interactive Career Timeline & Experience Cards
    ========================================================================== */

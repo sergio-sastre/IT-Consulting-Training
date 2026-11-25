@@ -24,7 +24,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css?v=25">
-  <link rel="stylesheet" href="resume.css?v=3">
+  <link rel="stylesheet" href="resume.css?v=5">
 
   <script type="application/ld+json">
     {
@@ -112,15 +112,22 @@
           </div>
         </div>
 
-        <!-- Signature Career Achievements Strip -->
+        <!-- Signature Career Achievements Strip (with Micro Data-Visuals) -->
         <div class="impact-grid" aria-label="Headline career achievements">
           <article class="impact-card">
             <span class="impact-eyebrow">Release Stability &middot; CHECK24</span>
             <div class="impact-number">3 <span class="impact-number-sub">hotfixes</span></div>
             <h2 class="impact-label">In 4.5 years of 3-week releases</h2>
             <p class="impact-desc">
-              Near-zero production regressions in multi-banking FinTech through a rigorous testing culture.
+              Near-zero production regressions in multi-banking FinTech via testing culture &amp; DevOps.
             </p>
+            <div class="impact-viz" aria-label="Release stability across 54 months (4.5 years) with only 3 hotfixes">
+              <div class="viz-release-grid" id="viz-release-grid" aria-hidden="true"></div>
+              <div class="viz-caption">
+                <span>54 months (4.5 yrs)</span>
+                <span class="viz-caption-amber">3 hotfixes</span>
+              </div>
+            </div>
           </article>
 
           <article class="impact-card">
@@ -130,6 +137,24 @@
             <p class="impact-desc">
               Streamlined build &amp; verification pipelines for faster developer feedback loops.
             </p>
+            <div class="impact-viz" aria-label="Pipeline duration reduced from 90 minutes to under 60 minutes">
+              <div class="viz-bars" aria-hidden="true">
+                <div class="viz-bar-row">
+                  <span class="viz-bar-label">Before</span>
+                  <div class="viz-bar-track">
+                    <div class="viz-bar-fill viz-bar-fill--muted" style="width: 100%"></div>
+                  </div>
+                  <span class="viz-bar-val">90m</span>
+                </div>
+                <div class="viz-bar-row">
+                  <span class="viz-bar-label">After</span>
+                  <div class="viz-bar-track">
+                    <div class="viz-bar-fill viz-bar-fill--accent" style="width: 64%"></div>
+                  </div>
+                  <span class="viz-bar-val viz-bar-val--accent">&lt;60m</span>
+                </div>
+              </div>
+            </div>
           </article>
 
           <article class="impact-card">
@@ -139,6 +164,13 @@
             <p class="impact-desc">
               Led workshops and tech talks on automated testing best practices and clean craft.
             </p>
+            <div class="impact-viz" aria-label="80+ engineers trained across workshops">
+              <div class="viz-dot-matrix" id="viz-dot-matrix" aria-hidden="true"></div>
+              <div class="viz-caption">
+                <span>1 dot = 1 engineer</span>
+                <span class="viz-caption-accent">80+ reached</span>
+              </div>
+            </div>
           </article>
 
           <article class="impact-card">
@@ -146,8 +178,33 @@
             <div class="impact-number">1st <span class="impact-number-sub">to ship</span></div>
             <h2 class="impact-label">1st PSD2 app &amp; 0-bug Leasing</h2>
             <p class="impact-desc">
-              Germany's first PSD2 multi-banking app, plus AutoScout24 Leasing first across Android, iOS &amp; Web.
+              Germany's first PSD2 multi-banking app, plus AutoScout24 Leasing first across platforms.
             </p>
+            <div class="impact-viz" aria-label="Android shipped first ahead of iOS and Web">
+              <div class="viz-lanes" aria-hidden="true">
+                <div class="viz-lane-row">
+                  <span class="viz-bar-label viz-bar-label--strong">Android</span>
+                  <div class="viz-bar-track">
+                    <div class="viz-bar-fill viz-bar-fill--accent" style="width: 100%"></div>
+                  </div>
+                  <span class="viz-bar-val viz-bar-val--accent">1st</span>
+                </div>
+                <div class="viz-lane-row">
+                  <span class="viz-bar-label">iOS</span>
+                  <div class="viz-bar-track">
+                    <div class="viz-bar-fill viz-bar-fill--muted" style="width: 72%"></div>
+                  </div>
+                  <span class="viz-bar-val">&middot;</span>
+                </div>
+                <div class="viz-lane-row">
+                  <span class="viz-bar-label">Web</span>
+                  <div class="viz-bar-track">
+                    <div class="viz-bar-fill viz-bar-fill--muted" style="width: 62%"></div>
+                  </div>
+                  <span class="viz-bar-val">&middot;</span>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -181,11 +238,110 @@
           </div>
         </div>
 
+        <!-- Proportional Career Span Ribbon (2014 - Present) -->
+        <div class="career-ribbon-card reveal" aria-label="Proportional career timeline from 2014 to present">
+          <div class="career-ribbon-header">
+            <span class="career-ribbon-title"><span data-years-since="2014-03">12+</span> Years Proportional Span</span>
+            <span class="career-ribbon-hint">Click any role to jump below</span>
+          </div>
+
+          <div class="career-ribbon-bar" role="list">
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--s1"
+              style="flex-grow: 10"
+              data-jump="#exp-lieferando"
+              data-tooltip="Pizza.de / Lieferando · Mar–Dec 2014 (10 mos)"
+              aria-label="Jump to Pizza.de / Lieferando, 10 months"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label">Pizza.de</span>
+            </button>
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--s2"
+              style="flex-grow: 13"
+              data-jump="#exp-bredex"
+              data-tooltip="Bredex GmbH · Jan 2015–Jan 2016 (1 yr 1 mo)"
+              aria-label="Jump to Bredex GmbH, 1 year 1 month"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label">Bredex</span>
+            </button>
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--s3"
+              style="flex-grow: 65"
+              data-jump="#exp-check24"
+              data-tooltip="CHECK24 GmbH · Feb 2016–Jun 2021 (5 yrs 5 mos)"
+              aria-label="Jump to CHECK24 GmbH, 5 years 5 months"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label">CHECK24 &middot; 5y 5m</span>
+            </button>
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--s4"
+              style="flex-grow: 7"
+              data-jump="#exp-autoscout24"
+              data-tooltip="AutoScout24 · Jun–Dec 2021 (7 mos)"
+              aria-label="Jump to AutoScout24, 7 months"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label">AS24</span>
+            </button>
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--s5"
+              style="flex-grow: 17"
+              data-jump="#exp-hermes"
+              data-tooltip="Hermes Germany · Jan 2022–May 2023 (1 yr 5 mos)"
+              aria-label="Jump to Hermes Germany, 1 year 5 months"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label">Hermes</span>
+            </button>
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--s6"
+              style="flex-grow: 3"
+              data-jump="#exp-appdev"
+              data-tooltip="appDev R&D · May–Aug 2023 (3 mos)"
+              aria-label="Jump to appDev R&D, 3 months"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label">aD</span>
+            </button>
+            <button
+              type="button"
+              class="ribbon-seg ribbon-seg--current"
+              style="flex-grow: 40"
+              data-jump="#exp-db"
+              data-ribbon-start="2023-08"
+              data-tooltip="Deutsche Bahn Systel · Aug 2023–Present"
+              aria-label="Jump to Deutsche Bahn Systel, Aug 2023 to Present"
+              role="listitem"
+            >
+              <span class="ribbon-seg-label" data-ribbon-label="Deutsche Bahn">Deutsche Bahn</span>
+            </button>
+          </div>
+
+          <div class="career-ribbon-axis" aria-hidden="true">
+            <span>2014</span>
+            <span>2016</span>
+            <span>2019</span>
+            <span>2021</span>
+            <span>2023</span>
+            <span>Present</span>
+          </div>
+        </div>
+
         <!-- Major Engagements Timeline -->
         <div class="timeline" id="major-timeline">
           <!-- 1. Deutsche Bahn Systel -->
           <article
             class="exp-entry exp-entry--current reveal"
+            id="exp-db"
             data-categories="major architecture consulting quality"
           >
             <div class="exp-rail">
@@ -256,6 +412,7 @@
           <!-- 2. Hermes Germany GmbH -->
           <article
             class="exp-entry reveal"
+            id="exp-hermes"
             data-categories="major quality consulting"
           >
             <div class="exp-rail">
@@ -304,6 +461,7 @@
           <!-- 3. AutoScout24 GmbH -->
           <article
             class="exp-entry reveal"
+            id="exp-autoscout24"
             data-categories="major architecture consulting"
           >
             <div class="exp-rail">
@@ -354,6 +512,7 @@
           <!-- 4. CHECK24 GmbH -->
           <article
             class="exp-entry reveal"
+            id="exp-check24"
             data-categories="major architecture quality"
           >
             <div class="exp-rail">
@@ -367,7 +526,7 @@
                 <div class="exp-title-group">
                   <h3 class="exp-company">CHECK24 GmbH</h3>
                   <p class="exp-role">
-                    Android Engineer
+                    Android &amp; DevOps Engineer
                     <span class="exp-role-mode">&middot; Financial &amp; Multi-Banking Products (incl. C24Bank)</span>
                   </p>
                 </div>
@@ -386,7 +545,7 @@
                   <strong>Germany's First PSD2 Multi-Banking App:</strong> Led the architectural migration to <strong>WebSockets</strong>, launching ahead of competitors.
                 </li>
                 <li>
-                  <strong>3 Hotfixes in 4.5 Years:</strong> Drove a high-quality testing culture achieving remarkable stability on a continuous <strong>3-week release cycle</strong>.
+                  <strong>3 Hotfixes in 4.5 Years &amp; Team DevOps:</strong> Handled DevOps workflows for the team and drove a high-quality testing culture, achieving remarkable stability on a continuous <strong>3-week release cycle</strong>.
                 </li>
                 <li>
                   <strong>Mentored 80+ Developers:</strong> Led company-wide tech talks and workshops on automated testing best practices.
@@ -395,6 +554,7 @@
 
               <div class="exp-tags" aria-label="Technologies and practices">
                 <span class="service-tag">WebSockets Architecture</span>
+                <span class="service-tag">CI/CD &amp; DevOps</span>
                 <span class="service-tag">PSD2 &amp; FinTech</span>
                 <span class="service-tag">Testing Strategy</span>
                 <span class="service-tag">80+ Devs Mentored</span>
@@ -405,6 +565,7 @@
           <!-- 5. Pizza.de (acquired by Lieferando) -->
           <article
             class="exp-entry reveal"
+            id="exp-lieferando"
             data-categories="major"
           >
             <div class="exp-rail">
@@ -446,7 +607,7 @@
 
           <div class="minor-grid">
             <!-- 6. appDev GmbH -->
-            <article class="minor-card reveal" data-categories="consulting">
+            <article class="minor-card reveal" id="exp-appdev" data-categories="consulting">
               <div class="minor-meta">May 2023 &ndash; Aug 2023 &middot; 3 mos &middot; Frankfurt (Remote)</div>
               <h4 class="exp-company">appDev GmbH <span class="exp-role-mode">(In-House R&amp;D)</span></h4>
               <p class="exp-role">Android &amp; Kotlin Multiplatform Engineer</p>
@@ -460,7 +621,7 @@
             </article>
 
             <!-- 7. Bredex GmbH -->
-            <article class="minor-card reveal" data-categories="consulting">
+            <article class="minor-card reveal" id="exp-bredex" data-categories="consulting">
               <div class="minor-meta">Jan 2015 &ndash; Jan 2016 &middot; 1 yr 1 mo &middot; Braunschweig</div>
               <h4 class="exp-company">Bredex GmbH</h4>
               <p class="exp-role">Android Engineer &middot; Client Consulting</p>
@@ -572,6 +733,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=9" defer></script>
+  <script src="script.js?v=11" defer></script>
 </body>
 </html>
