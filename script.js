@@ -118,7 +118,74 @@
     window.addEventListener('load', syncBadgeBoxHeights);
   }
 
-  // 4. Copyright Year
+  // 4. Resume Experience Filter Pills
+  const filterPills = document.querySelectorAll('.filter-pill[data-filter]');
+  if (filterPills.length > 0) {
+    const majorItems = document.querySelectorAll('#major-timeline .exp-entry');
+    const minorWrap = document.getElementById('minor-projects-wrap');
+    const minorCards = document.querySelectorAll('#minor-projects-wrap .minor-card');
+
+    filterPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const selected = pill.getAttribute('data-filter') || 'all';
+
+        filterPills.forEach((btn) => {
+          const active = btn === pill;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-pressed', String(active));
+        });
+
+        majorItems.forEach((item) => {
+          const cats = (item.getAttribute('data-categories') || '').split(/\s+/);
+          item.hidden = selected !== 'all' && !cats.includes(selected);
+        });
+
+        let visibleMinorCount = 0;
+        minorCards.forEach((card) => {
+          const cats = (card.getAttribute('data-categories') || '').split(/\s+/);
+          const match = selected === 'all' || cats.includes(selected);
+          card.hidden = !match;
+          if (match) visibleMinorCount += 1;
+        });
+
+        if (minorWrap) {
+          minorWrap.hidden = visibleMinorCount === 0;
+        }
+      });
+    });
+  }
+
+  // 5. Print / Save PDF & One-Click Email Copy (Resume Page)
+  const printBtn = document.getElementById('print-resume-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  const copyEmailStatus = document.getElementById('copy-email-status');
+  if (copyEmailBtn && copyEmailStatus) {
+    let resetTimer = null;
+    copyEmailBtn.addEventListener('click', async () => {
+      const email = copyEmailBtn.getAttribute('data-email') || '';
+      if (!email) return;
+      try {
+        await navigator.clipboard.writeText(email);
+        copyEmailBtn.classList.add('is-copied');
+        copyEmailStatus.textContent = 'Copied!';
+        if (resetTimer) window.clearTimeout(resetTimer);
+        resetTimer = window.setTimeout(() => {
+          copyEmailBtn.classList.remove('is-copied');
+          copyEmailStatus.textContent = 'Copy';
+        }, 2200);
+      } catch (_err) {
+        window.location.href = `mailto:${email}`;
+      }
+    });
+  }
+
+  // 6. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());

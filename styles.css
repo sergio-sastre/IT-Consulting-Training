@@ -318,6 +318,14 @@ button {
   transform: translate(1.5px, -1.5px);
 }
 
+.link-chip--internal::after {
+  content: "\2192";
+}
+
+.link-chip--internal:hover::after {
+  transform: translateX(2px);
+}
+
 /* ==========================================================================
    Hero — Split-Plane Backdrop + 3D-Tilt Floating Profile Card
    ========================================================================== */
