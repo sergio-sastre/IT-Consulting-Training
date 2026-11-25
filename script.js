@@ -185,7 +185,58 @@
     });
   }
 
-  // 6. Copyright Year
+  // 6. Dynamic Ongoing Role Duration (inclusive month count, e.g. "3 yrs 4 mos")
+  const dynamicDurations = document.querySelectorAll('[data-duration-start]');
+  if (dynamicDurations.length > 0) {
+    const now = new Date();
+    const nowYear = now.getFullYear();
+    const nowMonth = now.getMonth() + 1;
+
+    dynamicDurations.forEach((el) => {
+      const raw = el.getAttribute('data-duration-start') || '';
+      const match = /^(\d{4})-(\d{2})$/.exec(raw);
+      if (!match) return;
+
+      const startYear = Number(match[1]);
+      const startMonth = Number(match[2]);
+      const totalMonths = Math.max(
+        1,
+        (nowYear - startYear) * 12 + (nowMonth - startMonth) + 1
+      );
+      const years = Math.floor(totalMonths / 12);
+      const months = totalMonths % 12;
+
+      const parts = [];
+      if (years > 0) parts.push(`${years} ${years === 1 ? 'yr' : 'yrs'}`);
+      if (months > 0) parts.push(`${months} ${months === 1 ? 'mo' : 'mos'}`);
+      el.textContent = parts.join(' ');
+    });
+  }
+
+  // 7. Dynamic Total Years of Experience (e.g. "12+" since 2014-03)
+  const yearsSinceEls = document.querySelectorAll('[data-years-since]');
+  if (yearsSinceEls.length > 0) {
+    const now = new Date();
+    const nowYear = now.getFullYear();
+    const nowMonth = now.getMonth() + 1;
+
+    yearsSinceEls.forEach((el) => {
+      const raw = el.getAttribute('data-years-since') || '';
+      const match = /^(\d{4})-(\d{2})$/.exec(raw);
+      if (!match) return;
+
+      const startYear = Number(match[1]);
+      const startMonth = Number(match[2]);
+      const totalMonths = Math.max(
+        0,
+        (nowYear - startYear) * 12 + (nowMonth - startMonth)
+      );
+      const years = Math.floor(totalMonths / 12);
+      el.textContent = `${years}+`;
+    });
+  }
+
+  // 8. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
