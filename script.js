@@ -250,18 +250,6 @@
     releaseGrid.appendChild(frag);
   }
 
-  const dotMatrix = document.getElementById('viz-dot-matrix');
-  if (dotMatrix) {
-    // 80 dots (4 rows x 20) representing 80+ engineers trained
-    const frag = document.createDocumentFragment();
-    for (let i = 0; i < 80; i += 1) {
-      const dot = document.createElement('span');
-      dot.className = i >= 74 ? 'viz-dot viz-dot--bright' : 'viz-dot';
-      frag.appendChild(dot);
-    }
-    dotMatrix.appendChild(frag);
-  }
-
   const ribbonCurrent = document.querySelector('[data-ribbon-start]');
   if (ribbonCurrent) {
     const raw = ribbonCurrent.getAttribute('data-ribbon-start') || '';

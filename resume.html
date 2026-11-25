@@ -24,7 +24,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css?v=25">
-  <link rel="stylesheet" href="resume.css?v=5">
+  <link rel="stylesheet" href="resume.css?v=6">
 
   <script type="application/ld+json">
     {
@@ -164,23 +164,30 @@
             <p class="impact-desc">
               Led workshops and tech talks on automated testing best practices and clean craft.
             </p>
-            <div class="impact-viz" aria-label="80+ engineers trained across workshops">
-              <div class="viz-dot-matrix" id="viz-dot-matrix" aria-hidden="true"></div>
+            <div class="impact-viz" aria-label="Mentorship reach expanding from team to cross-team to 80+ engineers company-wide">
+              <div class="viz-arcs-wrap" aria-hidden="true">
+                <svg class="viz-arcs-svg" viewBox="0 0 180 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 18 50 A 72 72 0 0 1 162 50" stroke="rgba(22, 138, 89, 0.22)" stroke-width="5" stroke-linecap="round" />
+                  <path d="M 40 50 A 50 50 0 0 1 140 50" stroke="rgba(22, 138, 89, 0.52)" stroke-width="5" stroke-linecap="round" />
+                  <path d="M 62 50 A 28 28 0 0 1 118 50" stroke="#168a59" stroke-width="5" stroke-linecap="round" />
+                  <circle cx="90" cy="50" r="4.5" fill="#0b3322" />
+                </svg>
+              </div>
               <div class="viz-caption">
-                <span>1 dot = 1 engineer</span>
-                <span class="viz-caption-accent">80+ reached</span>
+                <span>Team &rarr; Cross-Team</span>
+                <span class="viz-caption-accent">Org-Wide (80+)</span>
               </div>
             </div>
           </article>
 
           <article class="impact-card">
-            <span class="impact-eyebrow">Market Firsts &middot; CHECK24 &amp; AutoScout24</span>
-            <div class="impact-number">1st <span class="impact-number-sub">to ship</span></div>
-            <h2 class="impact-label">1st PSD2 app &amp; 0-bug Leasing</h2>
+            <span class="impact-eyebrow">Platform First &middot; AutoScout24</span>
+            <div class="impact-number">1st <span class="impact-number-sub">&middot; 0 bugs</span></div>
+            <h2 class="impact-label">First frontend to ship Leasing</h2>
             <p class="impact-desc">
-              Germany's first PSD2 multi-banking app, plus AutoScout24 Leasing first across platforms.
+              Delivered on the #1 most-used Search screen ahead of deadline with zero known bugs.
             </p>
-            <div class="impact-viz" aria-label="Android shipped first ahead of iOS and Web">
+            <div class="impact-viz" aria-label="Android shipped Leasing first ahead of iOS and Web">
               <div class="viz-lanes" aria-hidden="true">
                 <div class="viz-lane-row">
                   <span class="viz-bar-label viz-bar-label--strong">Android</span>
@@ -552,6 +559,11 @@
                 </li>
               </ul>
 
+              <div class="exp-callout">
+                <span class="exp-callout-tag">DE Market 1st</span>
+                <span>Germany's first PSD2-compliant multi-banking app, ahead of competitors</span>
+              </div>
+
               <div class="exp-tags" aria-label="Technologies and practices">
                 <span class="service-tag">WebSockets Architecture</span>
                 <span class="service-tag">CI/CD &amp; DevOps</span>
@@ -733,6 +745,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=11" defer></script>
+  <script src="script.js?v=12" defer></script>
 </body>
 </html>
