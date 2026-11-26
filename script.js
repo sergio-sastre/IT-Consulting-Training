@@ -155,11 +155,33 @@
     });
   }
 
-  // 5. Print / Save PDF (Resume Page)
+  // 5. Print / Save PDF & One-Click Email Copy (Resume Page)
   const printBtn = document.getElementById('print-resume-btn');
   if (printBtn) {
     printBtn.addEventListener('click', () => {
       window.print();
+    });
+  }
+
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  const copyEmailStatus = document.getElementById('copy-email-status');
+  if (copyEmailBtn && copyEmailStatus) {
+    let resetTimer = null;
+    copyEmailBtn.addEventListener('click', async () => {
+      const email = copyEmailBtn.getAttribute('data-email') || '';
+      if (!email) return;
+      try {
+        await navigator.clipboard.writeText(email);
+        copyEmailBtn.classList.add('is-copied');
+        copyEmailStatus.textContent = 'Copied!';
+        if (resetTimer) window.clearTimeout(resetTimer);
+        resetTimer = window.setTimeout(() => {
+          copyEmailBtn.classList.remove('is-copied');
+          copyEmailStatus.textContent = 'Copy';
+        }, 2200);
+      } catch (_err) {
+        window.location.href = `mailto:${email}`;
+      }
     });
   }
 
