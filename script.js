@@ -93,6 +93,27 @@
     });
   }
 
+  // 2b. Subtle Specular Spotlight across Split-Chamber Cards
+  if (!prefersReducedMotion) {
+    const spotlightCards = document.querySelectorAll(
+      '.service-card, .gde-card, .award-card, .impact-card'
+    );
+    spotlightCards.forEach((card) => {
+      card.addEventListener(
+        'pointermove',
+        (e) => {
+          const rect = card.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const x = (((e.clientX - rect.left) / rect.width) * 100).toFixed(1);
+          const y = (((e.clientY - rect.top) / rect.height) * 100).toFixed(1);
+          card.style.setProperty('--mx', `${x}%`);
+          card.style.setProperty('--my', `${y}%`);
+        },
+        { passive: true }
+      );
+    });
+  }
+
   // 3. Sync GDE & Peer Bonus badge box heights on desktop
   const gdeBadgesBox = document.querySelector('.gde-badges-box');
   const awardBadgeBox = document.querySelector('.award-badge-box');

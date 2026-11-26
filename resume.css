@@ -157,70 +157,136 @@
 }
 
 .impact-card {
-  background: var(--pure-white);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.35rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1d7250 0%, #135038 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 22px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.36rem;
-  box-shadow: 0 14px 32px -28px rgba(11, 51, 34, 0.22);
-  transition: transform 200ms var(--ease-out), border-color 200ms ease;
+  gap: 0.38rem;
+  box-shadow:
+    -14px 26px 50px -20px rgba(19, 80, 56, 0.42),
+    0 6px 16px rgba(11, 51, 34, 0.12);
+  transition:
+    transform 240ms var(--ease-out),
+    border-color 220ms ease,
+    box-shadow 240ms var(--ease-out);
+}
+
+/* Sunset-to-emerald orbital top rim matching .avatar-halo */
+.impact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #f59e0b 0%, #fb923c 42%, #3ddc84 100%);
+  opacity: 0.92;
+}
+
+.impact-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle 220px at var(--mx, 50%) var(--my, 35%),
+    rgba(255, 255, 255, 0.16),
+    transparent 70%
+  );
+  transition: opacity 280ms ease;
 }
 
 .impact-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(22, 138, 89, 0.34);
+  transform: translateY(-4px);
+  border-color: rgba(61, 220, 132, 0.45);
+  box-shadow:
+    -18px 34px 60px -18px rgba(19, 80, 56, 0.50),
+    0 8px 20px rgba(11, 51, 34, 0.15);
+}
+
+.impact-card:hover::after {
+  opacity: 1;
 }
 
 .impact-eyebrow {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: calc(100% - 2.4rem);
+  margin: 1.25rem 1.2rem 0.25rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   font-family: var(--font-mono);
-  font-size: 0.67rem;
+  font-size: 0.59rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--cobalt-700);
+  letter-spacing: 0.045em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.impact-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3ddc84;
+  flex-shrink: 0;
 }
 
 .impact-number {
+  padding-inline: 1.3rem;
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 2.8vw, 2.2rem);
+  font-size: clamp(1.85rem, 2.9vw, 2.3rem);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  color: var(--ink-950);
+  line-height: 1.06;
+  letter-spacing: -0.032em;
+  color: var(--pure-white);
 }
 
 .impact-number-sub {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  color: var(--cobalt-600);
+  color: #7ef0b0;
 }
 
 .impact-label {
   margin: 0;
+  padding-inline: 1.3rem;
   font-family: var(--font-display);
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--ink-950);
+  color: var(--pure-white);
   line-height: 1.3;
 }
 
 .impact-desc {
   margin: 0;
-  font-size: 0.83rem;
-  line-height: 1.52;
-  color: var(--ink-500);
+  padding: 0 1.3rem 1.05rem;
+  font-size: 0.82rem;
+  line-height: 1.54;
+  color: rgba(233, 245, 238, 0.80);
 }
 
-/* Micro Data-Visualizations inside Achievement Cards */
+/* Dark Docked Micro Data-Visualizations Chamber (matching .profile-socials) */
 .impact-viz {
   margin-top: auto;
-  padding-top: 0.8rem;
-  border-top: 1px dashed var(--rule);
+  padding: 0.9rem 1.3rem 1.05rem;
+  background: rgba(8, 38, 26, 0.34);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
-  gap: 0.42rem;
+  gap: 0.45rem;
 }
 
 .viz-release-grid {
@@ -231,14 +297,15 @@
 
 .viz-tick {
   height: 9px;
-  border-radius: 2px;
-  background: var(--cobalt-600);
-  opacity: 0.85;
+  border-radius: 3px;
+  background: #3ddc84;
+  opacity: 0.82;
 }
 
 .viz-tick--hotfix {
-  background: #f59e0b;
+  background: #fbbf24;
   opacity: 1;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.55);
 }
 
 .viz-arcs-wrap {
@@ -255,22 +322,38 @@
   display: block;
 }
 
+.viz-arcs-svg path:nth-child(1) {
+  stroke: rgba(126, 240, 176, 0.25);
+}
+
+.viz-arcs-svg path:nth-child(2) {
+  stroke: rgba(126, 240, 176, 0.55);
+}
+
+.viz-arcs-svg path:nth-child(3) {
+  stroke: #3ddc84;
+}
+
+.viz-arcs-svg circle {
+  fill: #fbbf24;
+}
+
 .viz-caption {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-mono);
   font-size: 0.64rem;
-  color: var(--ink-500);
+  color: rgba(233, 245, 238, 0.72);
 }
 
 .viz-caption-amber {
-  color: #b45309;
+  color: #fcd34d;
   font-weight: 600;
 }
 
 .viz-caption-accent {
-  color: var(--cobalt-700);
+  color: #7ef0b0;
   font-weight: 600;
 }
 
@@ -284,7 +367,7 @@
 .viz-bar-row,
 .viz-lane-row {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 32px;
+  grid-template-columns: 44px minmax(0, 1fr) 34px;
   align-items: center;
   gap: 0.45rem;
 }
@@ -292,18 +375,18 @@
 .viz-bar-label {
   font-family: var(--font-mono);
   font-size: 0.64rem;
-  color: var(--ink-500);
+  color: rgba(233, 245, 238, 0.70);
 }
 
 .viz-bar-label--strong {
-  color: var(--ink-950);
+  color: var(--pure-white);
   font-weight: 600;
 }
 
 .viz-bar-track {
   height: 8px;
   border-radius: 999px;
-  background: var(--off-white);
+  background: rgba(255, 255, 255, 0.13);
   overflow: hidden;
 }
 
@@ -313,22 +396,22 @@
 }
 
 .viz-bar-fill--muted {
-  background: rgba(11, 51, 34, 0.2);
+  background: rgba(255, 255, 255, 0.28);
 }
 
 .viz-bar-fill--accent {
-  background: linear-gradient(90deg, var(--cobalt-600) 0%, #3ddc84 100%);
+  background: linear-gradient(90deg, #3ddc84 0%, #fbbf24 100%);
 }
 
 .viz-bar-val {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   text-align: right;
-  color: var(--ink-500);
+  color: rgba(233, 245, 238, 0.70);
 }
 
 .viz-bar-val--accent {
-  color: var(--cobalt-700);
+  color: #7ef0b0;
   font-weight: 600;
 }
 
@@ -1164,12 +1247,31 @@
     color: #111827 !important;
   }
 
+  .impact-card {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+  }
+
+  .impact-eyebrow,
+  .impact-number,
+  .impact-number-sub,
+  .impact-label,
+  .impact-desc,
+  .viz-caption,
+  .viz-bar-label,
+  .viz-bar-val,
   .tshape-compact-title--light,
   .tshape-depth-eyebrow,
   .tshape-skill-item {
     color: #111827 !important;
     border-color: #cbd5e1 !important;
     background: transparent !important;
+  }
+
+  .impact-viz {
+    background: #f8fafc !important;
+    border-top-color: #e2e8f0 !important;
   }
 
   .exp-entry,
