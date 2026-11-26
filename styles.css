@@ -1702,18 +1702,14 @@ button {
   border-color: var(--cobalt-600);
 }
 
-.oss-spotlight--youtube {
-  background: linear-gradient(135deg, rgba(234, 67, 53, 0.08) 0%, rgba(234, 67, 53, 0.02) 100%);
-  border-color: rgba(234, 67, 53, 0.20);
+.oss-spotlight--downloads {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.11) 0%, rgba(245, 158, 11, 0.03) 100%);
+  border-color: rgba(245, 158, 11, 0.28);
 }
 
-.oss-spotlight--youtube:hover {
-  background: linear-gradient(135deg, rgba(234, 67, 53, 0.13) 0%, rgba(234, 67, 53, 0.05) 100%);
-  border-color: rgba(217, 48, 37, 0.52);
-}
-
-.oss-spotlight--youtube:hover .oss-arrow {
-  color: #c5221f;
+.oss-spotlight--downloads:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .oss-spotlight-eyebrow {
@@ -1731,8 +1727,8 @@ button {
   color: var(--cobalt-700);
 }
 
-.oss-spotlight--youtube .oss-spotlight-eyebrow {
-  color: #c5221f;
+.oss-spotlight--downloads .oss-spotlight-eyebrow {
+  color: #9a6200;
 }
 
 .oss-spotlight-title {
