@@ -1041,19 +1041,24 @@
 }
 
 .exp-callout {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 0.6rem;
-  align-self: flex-start;
+  gap: 0.7rem;
   margin-inline: clamp(1.4rem, 2.8vw, 1.9rem);
-  padding: 0.45rem 0.9rem 0.45rem 0.65rem;
+  padding: 0.52rem 0.95rem 0.52rem 0.7rem;
   border-radius: 14px;
   background: linear-gradient(135deg, rgba(22, 138, 89, 0.10) 0%, rgba(22, 138, 89, 0.04) 100%);
   border: 1px solid rgba(22, 138, 89, 0.22);
   font-size: 0.84rem;
   font-weight: 600;
+  line-height: 1.45;
   color: var(--ink-950);
+}
+
+.exp-callout > span:last-child {
+  min-width: 0;
+  flex: 1;
 }
 
 .exp-callout-map {
