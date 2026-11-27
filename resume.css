@@ -134,9 +134,9 @@
 }
 
 .flag-badge--xs {
-  width: 14px;
-  height: 14px;
-  border-width: 1px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid rgba(19, 80, 56, 0.14);
   box-shadow: none;
 }
 
@@ -781,6 +781,7 @@
   grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
   position: relative;
+  scroll-margin-top: 5.5rem;
 }
 
 .exp-entry[hidden] {
