@@ -1271,7 +1271,92 @@
 }
 
 /* ==========================================================================
-   4. Print / Save-as-PDF Executive Stylesheet
+   4. Recognition, Open Source & Speaking Strip
+   ========================================================================== */
+.recognition-section {
+  padding-block: clamp(2.5rem, 5vw, 3.75rem);
+  background: var(--white);
+  border-top: 1px solid var(--rule);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.15rem;
+}
+
+@media (min-width: 860px) {
+  .recognition-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.recognition-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--pure-white) 0%, #f5fbf7 100%);
+  border: 1px solid rgba(19, 80, 56, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  box-shadow: 0 14px 32px -26px rgba(11, 51, 34, 0.24);
+  transition:
+    transform 220ms var(--ease-out),
+    border-color 200ms ease,
+    box-shadow 220ms var(--ease-out);
+}
+
+.recognition-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.45rem;
+  right: 1.45rem;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, #1d7250 0%, #3ddc84 62%, #f59e0b 100%);
+}
+
+.recognition-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(22, 138, 89, 0.36);
+  box-shadow: 0 18px 36px -24px rgba(11, 51, 34, 0.30);
+}
+
+.recognition-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cobalt-700);
+}
+
+.recognition-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--ink-950);
+}
+
+.recognition-desc {
+  margin: 0;
+  font-size: 0.89rem;
+  line-height: 1.58;
+  color: var(--ink-700);
+}
+
+.recognition-desc strong {
+  color: var(--ink-950);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   5. Print / Save-as-PDF Executive Stylesheet
    ========================================================================== */
 @media print {
   @page {
@@ -1301,10 +1386,34 @@
 
   .resume-hero,
   .experience-section,
-  .tshape-section {
+  .tshape-section,
+  .recognition-section {
     background: #ffffff !important;
     padding-block: 0.85rem !important;
     border-bottom: 1px solid #d1d5db !important;
+  }
+
+  .recognition-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+
+  .recognition-card {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    box-shadow: none !important;
+    padding: 0.75rem 0.85rem !important;
+    break-inside: avoid;
+  }
+
+  .recognition-card::before {
+    display: none !important;
+  }
+
+  .recognition-eyebrow,
+  .recognition-title,
+  .recognition-desc {
+    color: #111827 !important;
   }
 
   .tshape-compact-col--depth {

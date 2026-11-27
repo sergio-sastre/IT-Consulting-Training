@@ -1743,6 +1743,220 @@ button {
   line-height: 1.2;
 }
 
+/* Full-Width International Speaker & Communication Proof Card */
+.speaker-card {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+@media (min-width: 900px) {
+  .speaker-card {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.38fr);
+  }
+}
+
+.speaker-card > .speaker-card-lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+@media (min-width: 900px) {
+  .speaker-card > .speaker-card-lead {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+
+.speaker-eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7ef0b0;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.24rem 0.68rem;
+  border-radius: 999px;
+  margin-bottom: 0.25rem;
+}
+
+.speaker-stats-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin-top: 0.55rem;
+}
+
+.speaker-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.24rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(244, 251, 247, 0.92);
+}
+
+.speaker-stat-pill strong {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.speaker-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.35rem, 2.8vw, 1.85rem);
+  background: radial-gradient(circle at 85% 0%, #ffffff 0%, #f1f9f4 100%);
+}
+
+.speaker-venues {
+  display: flex;
+  flex-direction: column;
+  gap: 0.48rem;
+}
+
+.speaker-venues-label {
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cobalt-700);
+}
+
+.speaker-venue-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.speaker-venue-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.16);
+  border-radius: 999px;
+  padding: 0.24rem 0.34rem 0.24rem 0.78rem;
+  box-shadow: 0 2px 6px -3px rgba(11, 51, 34, 0.12);
+}
+
+.speaker-venue-count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--cobalt-700);
+  background: rgba(22, 138, 89, 0.11);
+  border: 1px solid rgba(22, 138, 89, 0.20);
+  border-radius: 999px;
+  padding: 0.12rem 0.48rem;
+  line-height: 1.2;
+}
+
+.speaker-featured-talk {
+  display: flex;
+  align-items: center;
+  gap: 0.78rem;
+  padding: 0.78rem 0.92rem;
+  border-radius: 13px;
+  background: var(--pure-white);
+  border: 1px solid rgba(22, 138, 89, 0.22);
+  box-shadow: 0 8px 18px -14px rgba(11, 51, 34, 0.25);
+  transition:
+    transform 180ms var(--ease-out),
+    border-color 180ms var(--ease-out),
+    box-shadow 180ms var(--ease-out),
+    background-color 180ms var(--ease-out);
+}
+
+.speaker-featured-talk:hover {
+  transform: translateY(-2px);
+  border-color: var(--cobalt-600);
+  background: var(--off-white);
+  box-shadow: 0 12px 24px -14px rgba(11, 51, 34, 0.30);
+}
+
+.speaker-featured-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: linear-gradient(145deg, #1d7250 0%, #135038 100%);
+  color: var(--pure-white);
+  box-shadow: 0 6px 14px -6px rgba(19, 80, 56, 0.45);
+}
+
+.speaker-featured-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.14rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.speaker-featured-meta {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cobalt-700);
+}
+
+.speaker-featured-title {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink-950);
+}
+
+.speaker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+}
+
+.speaker-actions .link-chip {
+  margin-inline: 0;
+  padding: 0.36rem 0.85rem;
+  font-size: 0.83rem;
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.16);
+  border-radius: 999px;
+}
+
+.speaker-actions .link-chip:hover {
+  background: var(--cobalt-600);
+  border-color: var(--cobalt-600);
+}
+
 /* ==========================================================================
    Closing Client Conversion CTA Banner
    ========================================================================== */
