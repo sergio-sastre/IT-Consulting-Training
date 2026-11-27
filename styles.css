@@ -139,22 +139,19 @@ button {
 }
 
 .brand-mark {
-  display: inline-grid;
-  place-items: center;
+  display: block;
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
-  border-radius: 8px;
-  background: var(--ink-950);
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  transition: background-color 180ms ease;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(15, 23, 42, 0.14);
+  transition: border-color 180ms ease, transform 180ms ease;
 }
 
 .brand:hover .brand-mark {
-  background: var(--cobalt-600);
+  border-color: var(--cobalt-600);
+  transform: scale(1.04);
 }
 
 .brand-role {
