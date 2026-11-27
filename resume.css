@@ -292,22 +292,19 @@
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  max-width: calc(100% - 2.4rem);
-  margin: 1.25rem 1.2rem 0.25rem;
-  padding: 0.22rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  gap: 0.4rem;
+  max-width: calc(100% - 2.6rem);
+  margin: 1.25rem 1.3rem 0.25rem;
+  padding: 0;
   font-family: var(--font-mono);
-  font-size: 0.59rem;
+  font-size: 0.62rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.06em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: rgba(255, 255, 255, 0.92);
+  color: #7ef0b0;
 }
 
 .impact-eyebrow::before {
@@ -849,8 +846,8 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 500;
-  padding: 0.14rem 0.52rem;
-  border-radius: 999px;
+  padding: 0.14rem 0.48rem;
+  border-radius: 6px;
   background: var(--cobalt-tint);
   color: var(--cobalt-700);
 }
@@ -950,13 +947,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
-  padding: 0.18rem 0.62rem;
-  border-radius: 999px;
-  background: linear-gradient(145deg, #1d7250 0%, #135038 100%);
-  color: var(--pure-white);
+  padding: 0;
+  color: var(--cobalt-700);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 500;
+  font-size: 0.68rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -1333,9 +1328,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.52rem 0.75rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--pure-white);
