@@ -1675,15 +1675,40 @@ button {
   filter: drop-shadow(0 4px 10px rgba(251, 191, 36, 0.42));
 }
 
-.clients-card .proof-label,
-.oss-card .proof-label {
-  margin-bottom: 0;
+/* Full-Width Open Source & AI Tooling Ecosystem Card */
+.oss-card {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.15rem;
 }
 
-/* Trusted Companies Logo Card */
-.clients-card,
-.oss-card {
-  gap: 1.15rem;
+.oss-card > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+@media (min-width: 900px) {
+  .oss-card {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.38fr);
+    gap: 0;
+  }
+
+  .oss-card > div:first-child {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .oss-card .oss-tray {
+    margin: 1.15rem;
+  }
+}
+
+.oss-card .proof-label {
+  margin-bottom: 0;
 }
 
 .clients-logo-tray {
@@ -1940,6 +1965,12 @@ button {
 }
 
 .oss-spotlight--downloads {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-top: 0.5rem;
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.11) 0%, rgba(245, 158, 11, 0.03) 100%);
   border-color: rgba(245, 158, 11, 0.28);
 }
