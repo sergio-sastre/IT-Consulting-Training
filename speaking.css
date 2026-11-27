@@ -196,30 +196,17 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: clamp(2rem, 4vw, 2.75rem);
-  padding: 0.55rem;
-  background: var(--off-white);
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  width: fit-content;
-  max-width: 100%;
-}
-
-@media (max-width: 639px) {
-  .speaking-filter-bar {
-    border-radius: var(--radius-md);
-    width: 100%;
-  }
 }
 
 .filter-pill {
   appearance: none;
-  border: 1px solid transparent;
-  background: transparent;
+  border: 1px solid var(--rule-strong);
+  background: var(--pure-white);
   color: var(--ink-700);
   font-family: var(--font-display);
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  padding: 0.48rem 0.98rem;
+  padding: 0.46rem 0.96rem;
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
@@ -233,12 +220,13 @@
 }
 
 .filter-pill:hover {
-  color: var(--ink-950);
-  background: rgba(22, 138, 89, 0.08);
+  border-color: var(--cobalt-600);
+  color: var(--cobalt-700);
 }
 
 .filter-pill.is-active {
   background: linear-gradient(145deg, #1d7250 0%, #135038 100%);
+  border-color: transparent;
   color: var(--pure-white);
   box-shadow: 0 8px 18px -10px rgba(19, 80, 56, 0.55);
 }
@@ -567,9 +555,8 @@
   text-transform: uppercase;
   color: var(--cobalt-700);
   background: rgba(22, 138, 89, 0.10);
-  border: 1px solid rgba(22, 138, 89, 0.18);
-  padding: 0.14rem 0.48rem;
-  border-radius: 999px;
+  padding: 0.16rem 0.5rem;
+  border-radius: 6px;
 }
 
 .talk-body {
@@ -592,9 +579,8 @@
   font-weight: 500;
   color: var(--cobalt-700);
   background: #edf8f2;
-  border: 1px solid rgba(19, 80, 56, 0.14);
-  border-radius: 999px;
-  padding: 0.16rem 0.6rem;
+  border-radius: 6px;
+  padding: 0.18rem 0.56rem;
 }
 
 .talk-badge-new {
@@ -605,8 +591,8 @@
   text-transform: uppercase;
   color: var(--pure-white);
   background: linear-gradient(135deg, #1d7250 0%, #135038 100%);
-  padding: 0.16rem 0.56rem;
-  border-radius: 999px;
+  padding: 0.18rem 0.52rem;
+  border-radius: 6px;
 }
 
 .talk-title {
@@ -798,9 +784,8 @@
   letter-spacing: 0.04em;
   color: var(--ink-800);
   background: var(--off-white);
-  border: 1px solid rgba(19, 80, 56, 0.16);
-  border-radius: 999px;
-  padding: 0.14rem 0.52rem;
+  border-radius: 6px;
+  padding: 0.16rem 0.5rem;
 }
 
 /* High-Contrast Language Flags on Light Podcast Cards */
@@ -826,10 +811,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.32rem;
-  padding: 0.14rem 0.2rem 0.14rem 0.48rem;
-  border-radius: 999px;
+  padding: 0.14rem 0.22rem 0.14rem 0.48rem;
+  border-radius: 6px;
   background: #edf8f2;
-  border: 1px solid rgba(19, 80, 56, 0.24);
 }
 
 .flag-subs-cc {
