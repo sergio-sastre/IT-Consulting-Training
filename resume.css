@@ -71,6 +71,81 @@
   font-weight: 700;
 }
 
+.resume-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.9rem;
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(19, 80, 56, 0.11);
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: var(--ink-700);
+}
+
+.resume-meta-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  font-weight: 600;
+  color: var(--ink-800);
+  white-space: nowrap;
+}
+
+.resume-meta-loc svg {
+  color: var(--cobalt-600);
+  flex-shrink: 0;
+}
+
+.resume-meta-divider {
+  width: 1px;
+  height: 0.95rem;
+  background: rgba(19, 80, 56, 0.20);
+  flex-shrink: 0;
+}
+
+.resume-lang-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.95rem;
+}
+
+.resume-lang-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  white-space: nowrap;
+}
+
+.resume-lang-item strong {
+  color: var(--ink-950);
+  font-weight: 600;
+}
+
+.resume-lang-level {
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  color: var(--cobalt-700);
+  background: rgba(22, 138, 89, 0.09);
+  padding: 0.08rem 0.38rem;
+  border-radius: 4px;
+}
+
+.flag-badge--xs {
+  width: 14px;
+  height: 14px;
+  border-width: 1px;
+  box-shadow: none;
+}
+
+@media (max-width: 560px) {
+  .resume-meta-divider {
+    display: none;
+  }
+}
+
 .resume-header-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1092,7 +1167,7 @@
   padding-top: 0.15rem;
 }
 
-/* Additional R&D & Consulting Sub-Section */
+/* Additional Cross-Platform & Consulting Sub-Section */
 .minor-projects-wrap {
   margin-top: clamp(2.25rem, 4.5vw, 3rem);
   padding-top: clamp(1.75rem, 3.5vw, 2.25rem);
@@ -1570,6 +1645,18 @@
     border-color: #d1d5db !important;
     box-shadow: none !important;
     padding: 0.35rem 0.5rem !important;
+  }
+
+  .resume-meta-strip {
+    border-top-color: #d1d5db !important;
+    color: #111827 !important;
+  }
+
+  .resume-meta-loc,
+  .resume-lang-level {
+    color: #374151 !important;
+    background: transparent !important;
+    padding: 0 !important;
   }
 
   .tshape-compact-col--depth {
