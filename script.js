@@ -325,6 +325,107 @@
     });
   }
 
+  // 8b. Speaking Page Category Filters
+  const speakingFilterButtons = document.querySelectorAll('[data-speaking-filter]');
+  const speakingGroups = document.querySelectorAll('[data-speaking-group]');
+  if (speakingFilterButtons.length > 0 && speakingGroups.length > 0) {
+    speakingFilterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const selected = btn.getAttribute('data-speaking-filter') || 'all';
+        speakingFilterButtons.forEach((other) => {
+          const isActive = other === btn;
+          other.classList.toggle('is-active', isActive);
+          other.setAttribute('aria-selected', String(isActive));
+        });
+        speakingGroups.forEach((group) => {
+          const groupKey = group.getAttribute('data-speaking-group');
+          const show = selected === 'all' || groupKey === selected;
+          group.hidden = !show;
+        });
+      });
+    });
+  }
+
+  // 8c. Live GitHub Star Counts (with static HTML fallbacks & sessionStorage cache)
+  const starNodes = document.querySelectorAll('[data-github-stars]');
+  const totalStarNodes = document.querySelectorAll('[data-github-stars-total]');
+  if (starNodes.length > 0 || totalStarNodes.length > 0) {
+    const CACHE_KEY = 'gh_stars_cache_v1';
+    const CACHE_TTL_MS = 30 * 60 * 1000;
+    const nowMs = Date.now();
+    let cache = {};
+
+    try {
+      const raw = window.sessionStorage.getItem(CACHE_KEY);
+      if (raw) cache = JSON.parse(raw) || {};
+    } catch (_) {
+      cache = {};
+    }
+
+    const reposNeeded = new Set();
+    starNodes.forEach((el) => {
+      const repo = el.getAttribute('data-github-stars');
+      if (repo) reposNeeded.add(repo);
+    });
+    totalStarNodes.forEach((el) => {
+      const list = (el.getAttribute('data-github-stars-total') || '')
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      list.forEach((repo) => reposNeeded.add(repo));
+    });
+
+    const fetchRepoStars = async (repo) => {
+      const cached = cache[repo];
+      if (cached && typeof cached.count === 'number' && nowMs - cached.ts < CACHE_TTL_MS) {
+        return cached.count;
+      }
+      try {
+        const res = await window.fetch(`https://api.github.com/repos/${repo}`, {
+          headers: { Accept: 'application/vnd.github+json' }
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (typeof data.stargazers_count !== 'number') return null;
+        cache[repo] = { count: data.stargazers_count, ts: Date.now() };
+        try {
+          window.sessionStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+        } catch (_) {
+          // Ignore storage quota / private mode errors
+        }
+        return data.stargazers_count;
+      } catch (_) {
+        return null;
+      }
+    };
+
+    Promise.all(
+      Array.from(reposNeeded).map(async (repo) => [repo, await fetchRepoStars(repo)])
+    ).then((entries) => {
+      const counts = Object.fromEntries(entries);
+
+      starNodes.forEach((el) => {
+        const repo = el.getAttribute('data-github-stars');
+        const count = repo ? counts[repo] : null;
+        if (typeof count === 'number') {
+          el.textContent = count.toLocaleString('en-US');
+        }
+      });
+
+      totalStarNodes.forEach((el) => {
+        const repos = (el.getAttribute('data-github-stars-total') || '')
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean);
+        const resolved = repos.map((r) => counts[r]);
+        if (repos.length > 0 && resolved.every((v) => typeof v === 'number')) {
+          const sum = resolved.reduce((acc, n) => acc + n, 0);
+          el.textContent = sum.toLocaleString('en-US');
+        }
+      });
+    });
+  }
+
   // 9. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {

@@ -1,0 +1,909 @@
+/* ==========================================================================
+   Speaking, Workshops & Media Page Stylesheet
+   Extends styles.css with the same emerald/forest atelier design tokens.
+   ========================================================================== */
+
+.speaking-hero {
+  position: relative;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle 680px at 88% 8%, rgba(61, 220, 132, 0.14), transparent 68%),
+    radial-gradient(circle 520px at 8% 85%, rgba(245, 158, 11, 0.08), transparent 68%),
+    var(--off-white);
+  border-bottom: 1px solid var(--rule);
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(2.75rem, 5.5vw, 4.25rem);
+}
+
+.speaking-header-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.speaking-header-copy {
+  max-width: 680px;
+}
+
+.speaking-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 4.6vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.032em;
+  line-height: 1.08;
+  margin: 0.7rem 0 0.75rem;
+  color: var(--ink-950);
+}
+
+.speaking-headline-accent {
+  background: linear-gradient(125deg, #1d7250 0%, #168a59 55%, #0f6845 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.speaking-lead {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+  line-height: 1.65;
+  color: var(--ink-700);
+}
+
+.speaking-lead strong {
+  color: var(--ink-950);
+}
+
+.speaking-header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* 4-Column Stat Strip */
+.speaking-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+@media (min-width: 900px) {
+  .speaking-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+.speaking-stat-card {
+  position: relative;
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.14);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow:
+    -10px 20px 38px -24px rgba(19, 80, 56, 0.24),
+    0 3px 10px rgba(11, 51, 34, 0.04);
+  overflow: hidden;
+}
+
+.speaking-stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #1d7250 0%, #3ddc84 62%, #f59e0b 100%);
+}
+
+.speaking-stat-card--primary {
+  background: linear-gradient(155deg, #1d7250 0%, #135038 100%);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--pure-white);
+}
+
+.speaking-stat-card--primary::before {
+  background: linear-gradient(90deg, #3ddc84 0%, #f59e0b 100%);
+}
+
+.speaking-stat-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cobalt-700);
+}
+
+.speaking-stat-card--primary .speaking-stat-eyebrow {
+  color: #7ef0b0;
+}
+
+.speaking-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: var(--ink-950);
+}
+
+.speaking-stat-card--primary .speaking-stat-num {
+  color: var(--pure-white);
+}
+
+.speaking-stat-label {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.speaking-stat-card--primary .speaking-stat-label {
+  color: rgba(244, 251, 247, 0.94);
+}
+
+.speaking-stat-sub {
+  font-size: 0.8rem;
+  color: var(--ink-500);
+  line-height: 1.4;
+}
+
+.speaking-stat-card--primary .speaking-stat-sub {
+  color: rgba(232, 246, 238, 0.8);
+}
+
+/* Conference Stages Strip */
+.speaking-stages-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.14);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 26px -22px rgba(11, 51, 34, 0.22);
+}
+
+.speaking-stages-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cobalt-700);
+}
+
+/* ==========================================================================
+   Filter Bar & Main Speaking Sections
+   ========================================================================== */
+.speaking-main {
+  background: var(--white);
+  padding-block: clamp(2.25rem, 4.5vw, 3.5rem) clamp(3.25rem, 6vw, 4.75rem);
+}
+
+.speaking-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  padding: 0.55rem;
+  background: var(--off-white);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  .speaking-filter-bar {
+    border-radius: var(--radius-md);
+    width: 100%;
+  }
+}
+
+.filter-pill {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-700);
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.48rem 0.98rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.filter-pill:hover {
+  color: var(--ink-950);
+  background: rgba(22, 138, 89, 0.08);
+}
+
+.filter-pill.is-active {
+  background: linear-gradient(145deg, #1d7250 0%, #135038 100%);
+  color: var(--pure-white);
+  box-shadow: 0 8px 18px -10px rgba(19, 80, 56, 0.55);
+}
+
+.filter-pill-count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.08rem 0.42rem;
+  border-radius: 999px;
+  background: rgba(19, 80, 56, 0.10);
+  color: var(--cobalt-700);
+}
+
+.filter-pill.is-active .filter-pill-count {
+  background: rgba(255, 255, 255, 0.18);
+  color: #7ef0b0;
+}
+
+.speaking-group {
+  margin-bottom: clamp(2.75rem, 5vw, 3.75rem);
+}
+
+.speaking-group:last-child {
+  margin-bottom: 0;
+}
+
+.speaking-group[hidden] {
+  display: none !important;
+}
+
+.speaking-group-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.speaking-group-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  color: var(--ink-950);
+}
+
+.speaking-group-sub {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-500);
+}
+
+/* ==========================================================================
+   Tech Talks Visual Thumbnail Grid (Header Above Thumbnail)
+   ========================================================================== */
+.featured-talks-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.35rem;
+}
+
+@media (min-width: 680px) {
+  .featured-talks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1020px) {
+  .featured-talks-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.featured-talk-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow:
+    -12px 24px 44px -26px rgba(19, 80, 56, 0.24),
+    0 4px 12px rgba(11, 51, 34, 0.05);
+  transition:
+    transform 240ms var(--ease-out),
+    border-color 200ms ease,
+    box-shadow 240ms var(--ease-out);
+}
+
+.featured-talk-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(22, 138, 89, 0.38);
+  box-shadow:
+    -16px 32px 54px -24px rgba(19, 80, 56, 0.32),
+    0 8px 18px rgba(11, 51, 34, 0.08);
+}
+
+.featured-talk-card--latest {
+  border-color: rgba(22, 138, 89, 0.34);
+}
+
+/* Clean Top Header Bar Above Thumbnail */
+.featured-talk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  background: linear-gradient(155deg, #1d7250 0%, #135038 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.featured-talk-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--pure-white);
+}
+
+.featured-latest-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7ef0b0;
+}
+
+.featured-latest-dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3ddc84;
+  box-shadow: 0 0 0 2.5px rgba(61, 220, 132, 0.28);
+}
+
+.featured-talk-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fbbf24;
+}
+
+.featured-thumb-link {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d2b1f;
+  border-bottom: 1px solid rgba(19, 80, 56, 0.12);
+}
+
+.featured-thumb-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 28, 19, 0.04) 0%,
+    rgba(8, 28, 19, 0.04) 55%,
+    rgba(8, 28, 19, 0.28) 100%
+  );
+  transition: opacity 220ms ease;
+}
+
+.featured-thumb-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 360ms var(--ease-out);
+}
+
+.featured-talk-card:hover .featured-thumb-img {
+  transform: scale(1.045);
+}
+
+.featured-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  padding-left: 2px;
+  color: var(--pure-white);
+  background: rgba(19, 80, 56, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 26px -6px rgba(0, 0, 0, 0.55);
+  transition:
+    transform 220ms var(--ease-out),
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.featured-play-btn--slides {
+  padding-left: 0;
+}
+
+.featured-talk-card:hover .featured-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #168a59;
+  border-color: #7ef0b0;
+}
+
+.featured-talk-body {
+  padding: 1.15rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+  flex: 1;
+}
+
+.featured-talk-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.32;
+  color: var(--ink-950);
+}
+
+.featured-talk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 0.55rem;
+}
+
+/* ==========================================================================
+   Tech Talks List
+   ========================================================================== */
+.talks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.talk-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.14);
+  border-radius: var(--radius-md);
+  padding: clamp(1.2rem, 2.5vw, 1.55rem);
+  box-shadow: 0 14px 32px -26px rgba(11, 51, 34, 0.24);
+  transition:
+    transform 220ms var(--ease-out),
+    border-color 200ms ease,
+    box-shadow 220ms var(--ease-out);
+}
+
+@media (min-width: 780px) {
+  .talk-card {
+    grid-template-columns: 92px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.35rem;
+  }
+}
+
+.talk-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(22, 138, 89, 0.36);
+  box-shadow: 0 18px 36px -24px rgba(11, 51, 34, 0.30);
+}
+
+.talk-card--featured {
+  background: linear-gradient(135deg, #ffffff 0%, #eff9f3 100%);
+  border-color: rgba(22, 138, 89, 0.34);
+}
+
+.talk-year-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+@media (min-width: 780px) {
+  .talk-year-col {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    border-right: 1px solid var(--rule);
+    padding-right: 1rem;
+  }
+}
+
+.talk-year {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink-950);
+}
+
+.talk-count-tag {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cobalt-700);
+  background: rgba(22, 138, 89, 0.10);
+  border: 1px solid rgba(22, 138, 89, 0.18);
+  padding: 0.14rem 0.48rem;
+  border-radius: 999px;
+}
+
+.talk-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.48rem;
+  min-width: 0;
+}
+
+.talk-venues {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.talk-venue-pill {
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  font-weight: 500;
+  color: var(--cobalt-700);
+  background: #edf8f2;
+  border: 1px solid rgba(19, 80, 56, 0.14);
+  border-radius: 999px;
+  padding: 0.16rem 0.6rem;
+}
+
+.talk-badge-new {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pure-white);
+  background: linear-gradient(135deg, #1d7250 0%, #135038 100%);
+  padding: 0.16rem 0.56rem;
+  border-radius: 999px;
+}
+
+.talk-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.06rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--ink-950);
+}
+
+.talk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.36rem;
+}
+
+.talk-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+@media (min-width: 780px) {
+  .talk-links {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 146px;
+  }
+}
+
+.media-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  padding: 0.46rem 0.88rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 180ms var(--ease-out),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.media-btn--video {
+  background: linear-gradient(145deg, #1d7250 0%, #135038 100%);
+  color: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.25);
+  box-shadow: 0 8px 16px -10px rgba(19, 80, 56, 0.5);
+}
+
+.media-btn--video:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(145deg, #21815a 0%, #165d41 100%);
+}
+
+.media-btn--slides {
+  background: var(--pure-white);
+  color: var(--ink-900);
+  border: 1px solid rgba(19, 80, 56, 0.2);
+}
+
+.media-btn--slides:hover {
+  transform: translateY(-1px);
+  border-color: var(--cobalt-600);
+  color: var(--cobalt-700);
+  background: var(--off-white);
+}
+
+/* ==========================================================================
+   Workshops, Panels & Podcasts Grids
+   ========================================================================== */
+.workshop-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.16);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow:
+    -12px 24px 44px -26px rgba(19, 80, 56, 0.24),
+    0 4px 12px rgba(11, 51, 34, 0.05);
+}
+
+@media (min-width: 860px) {
+  .workshop-card {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+  }
+}
+
+.workshop-main {
+  padding: clamp(1.4rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workshop-desc {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--ink-700);
+}
+
+.workshop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.workshop-repos {
+  padding: clamp(1.35rem, 2.8vw, 1.85rem);
+  background: linear-gradient(160deg, #eff9f3 0%, #e4f3eb 100%);
+  border-top: 1px solid rgba(19, 80, 56, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+@media (min-width: 860px) {
+  .workshop-repos {
+    border-top: none;
+    border-left: 1px solid rgba(19, 80, 56, 0.10);
+  }
+}
+
+.panels-grid,
+.podcasts-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  .panels-grid,
+  .podcasts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.media-card {
+  background: var(--pure-white);
+  border: 1px solid rgba(19, 80, 56, 0.14);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: 0 12px 28px -24px rgba(11, 51, 34, 0.22);
+  transition:
+    transform 200ms var(--ease-out),
+    border-color 200ms ease,
+    box-shadow 200ms var(--ease-out);
+}
+
+.media-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(22, 138, 89, 0.36);
+  box-shadow: 0 16px 32px -22px rgba(11, 51, 34, 0.28);
+}
+
+.media-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.media-card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  font-weight: 500;
+  color: var(--cobalt-700);
+}
+
+.lang-pill {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-800);
+  background: var(--off-white);
+  border: 1px solid rgba(19, 80, 56, 0.16);
+  border-radius: 999px;
+  padding: 0.14rem 0.52rem;
+}
+
+/* High-Contrast Language Flags on Light Podcast Cards */
+.media-card .flag-badge {
+  border: 1.5px solid rgba(19, 80, 56, 0.45);
+  box-shadow:
+    0 0 0 2px #edf8f2,
+    0 2px 6px rgba(11, 51, 34, 0.18);
+  transition: none;
+}
+
+.media-card .flag-badge:hover {
+  transform: none;
+}
+
+.flag-group--subs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.flag-subs-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.14rem 0.2rem 0.14rem 0.48rem;
+  border-radius: 999px;
+  background: #edf8f2;
+  border: 1px solid rgba(19, 80, 56, 0.24);
+}
+
+.flag-subs-cc {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cobalt-700);
+  line-height: 1;
+}
+
+.media-card .flag-badge--sm {
+  width: 18px;
+  height: 18px;
+  border-width: 1.5px;
+  border-color: rgba(19, 80, 56, 0.4);
+  box-shadow: none;
+}
+
+.media-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.32;
+  color: var(--ink-950);
+}
+
+.media-card-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.56;
+  color: var(--ink-700);
+}
+
+.media-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 0.45rem;
+}
+
+/* Compact YouTube Channel Strip */
+.youtube-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: clamp(1.35rem, 2.8vw, 1.85rem);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #f3faf6 0%, #e5f4ec 100%);
+  border: 1px solid rgba(19, 80, 56, 0.18);
+}
+
+.youtube-strip-copy {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.youtube-strip-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--ink-950);
+}
+
+.youtube-strip-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.58;
+  color: var(--ink-700);
+}
