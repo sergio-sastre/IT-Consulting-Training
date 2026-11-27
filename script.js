@@ -206,6 +206,33 @@
     });
   }
 
+  // 5b. Generic One-Click Copy Email CTA Buttons (All Pages)
+  const copyCtaButtons = document.querySelectorAll('[data-copy-email]');
+  if (copyCtaButtons.length > 0) {
+    copyCtaButtons.forEach((btn) => {
+      const labelEl = btn.querySelector('[data-copy-label]') || btn;
+      const defaultLabel = labelEl.textContent.trim();
+      let resetTimer = null;
+
+      btn.addEventListener('click', async () => {
+        const email = btn.getAttribute('data-copy-email') || '';
+        if (!email) return;
+        try {
+          await navigator.clipboard.writeText(email);
+          btn.classList.add('is-copied');
+          labelEl.textContent = 'Email Copied!';
+          if (resetTimer) window.clearTimeout(resetTimer);
+          resetTimer = window.setTimeout(() => {
+            btn.classList.remove('is-copied');
+            labelEl.textContent = defaultLabel;
+          }, 2200);
+        } catch (_err) {
+          window.location.href = `mailto:${email}`;
+        }
+      });
+    });
+  }
+
   // 6. Dynamic Ongoing Role Duration (inclusive month count, e.g. "3 yrs 4 mos")
   const dynamicDurations = document.querySelectorAll('[data-duration-start]');
   if (dynamicDurations.length > 0) {

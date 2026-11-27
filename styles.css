@@ -244,6 +244,12 @@ button {
   transform: translateY(1px);
 }
 
+.btn.is-copied {
+  background: var(--cobalt-600);
+  color: var(--pure-white);
+  border-color: var(--cobalt-600);
+}
+
 .btn--primary {
   background: var(--cobalt-600);
   color: var(--pure-white);
