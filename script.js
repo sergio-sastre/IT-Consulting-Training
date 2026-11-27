@@ -426,6 +426,84 @@
     });
   }
 
+  // 8d. Live Monthly Library Downloads (sum of JitPack & Scarf badges with static fallback)
+  const downloadNodes = document.querySelectorAll('[data-library-downloads]');
+  if (downloadNodes.length > 0) {
+    const DL_CACHE_KEY = 'lib_downloads_cache_v1';
+    const DL_CACHE_TTL_MS = 30 * 60 * 1000;
+    const scarfBadgeUrl =
+      'https://api.scarf.sh/v2/packages/Sergio-sastre/87e0cced-b5ee-4c8a-806c-81bdc43f6ec6/downloads-badge';
+    const DOWNLOAD_SOURCES = [
+      'https://jitpack.io/v/sergio-sastre/ComposablePreviewScanner/month.svg',
+      `https://img.shields.io/badge/dynamic/xml?url=${encodeURIComponent(scarfBadgeUrl)}&query=${encodeURIComponent("//*[local-name()='title']")}&label=scarf`,
+      'https://jitpack.io/v/sergio-sastre/AndroidUiTestingUtils/month.svg'
+    ];
+
+    const parseMonthlyDownloads = (svgText) => {
+      const match = /(\d[\d,]*(?:\.\d+)?)\s*([kKmM])?\s*\/\s*month/i.exec(svgText);
+      if (!match) return null;
+      const value = Number.parseFloat(match[1].replace(/,/g, ''));
+      if (!Number.isFinite(value)) return null;
+      const unit = (match[2] || '').toLowerCase();
+      const multiplier = unit === 'm' ? 1000000 : unit === 'k' ? 1000 : 1;
+      return Math.round(value * multiplier);
+    };
+
+    const applyDownloadTotal = (total) => {
+      const formatted = total.toLocaleString('en-US');
+      downloadNodes.forEach((el) => {
+        el.textContent = formatted;
+      });
+    };
+
+    let cachedTotal = null;
+    try {
+      const raw = window.sessionStorage.getItem(DL_CACHE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (
+          parsed &&
+          typeof parsed.total === 'number' &&
+          Date.now() - parsed.ts < DL_CACHE_TTL_MS
+        ) {
+          cachedTotal = parsed.total;
+        }
+      }
+    } catch (_) {
+      cachedTotal = null;
+    }
+
+    if (typeof cachedTotal === 'number') {
+      applyDownloadTotal(cachedTotal);
+    } else {
+      Promise.all(
+        DOWNLOAD_SOURCES.map(async (url) => {
+          try {
+            const res = await window.fetch(url);
+            if (!res.ok) return null;
+            const svgText = await res.text();
+            return parseMonthlyDownloads(svgText);
+          } catch (_) {
+            return null;
+          }
+        })
+      ).then((counts) => {
+        if (counts.every((n) => typeof n === 'number' && n > 0)) {
+          const total = counts.reduce((acc, n) => acc + n, 0);
+          applyDownloadTotal(total);
+          try {
+            window.sessionStorage.setItem(
+              DL_CACHE_KEY,
+              JSON.stringify({ total, ts: Date.now() })
+            );
+          } catch (_) {
+            // Ignore storage quota / private mode errors
+          }
+        }
+      });
+    }
+  }
+
   // 9. Copyright Year
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
