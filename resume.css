@@ -1273,8 +1273,28 @@
 }
 
 .tshape-compact-col--depth {
-  background: linear-gradient(155deg, #1d7250 0%, #114b34 62%, #0b3322 100%);
-  color: var(--pure-white);
+  position: relative;
+  background: linear-gradient(180deg, #fffcf2 0%, #fbf3dc 100%);
+  color: var(--ink-950);
+  border-top: 1px solid rgba(212, 150, 17, 0.20);
+}
+
+.tshape-compact-col--depth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 4.5px;
+  background: linear-gradient(180deg, #d97706 0%, #fbbf24 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 860px) {
+  .tshape-compact-col--depth {
+    border-top: none;
+    border-left: 1px solid rgba(212, 150, 17, 0.20);
+  }
 }
 
 .tshape-axis-tag {
@@ -1289,9 +1309,10 @@
 .tshape-depth-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.7rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7ef0b0;
+  color: #9a5d00;
 }
 
 .tshape-compact-title {
@@ -1304,7 +1325,7 @@
 }
 
 .tshape-compact-title--light {
-  color: var(--pure-white);
+  color: #7c4a00;
 }
 
 .tshape-chip-wrap {
@@ -1333,17 +1354,17 @@
   gap: 0.5rem;
   padding: 0.52rem 0.75rem;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.72);
   font-size: 0.84rem;
   font-weight: 600;
-  color: var(--pure-white);
+  color: var(--ink-950);
 }
 
 .tshape-skill-square {
   width: 7px;
   height: 7px;
   border-radius: 2px;
-  background: #3ddc84;
+  background: #d97706;
   flex-shrink: 0;
 }
 
@@ -1426,20 +1447,17 @@
   height: 2.15rem;
   border-radius: 10px;
   flex-shrink: 0;
-  background: rgba(22, 138, 89, 0.11);
-  border: 1px solid rgba(22, 138, 89, 0.20);
+  background: rgba(22, 138, 89, 0.10);
   color: var(--cobalt-700);
 }
 
 .recognition-card--oss .recognition-icon {
-  background: rgba(245, 158, 11, 0.13);
-  border-color: rgba(217, 119, 6, 0.26);
+  background: rgba(245, 158, 11, 0.12);
   color: #b45309;
 }
 
 .recognition-card--speaking .recognition-icon {
-  background: rgba(11, 51, 34, 0.09);
-  border-color: rgba(11, 51, 34, 0.18);
+  background: rgba(11, 51, 34, 0.08);
   color: #114b34;
 }
 
@@ -1483,14 +1501,11 @@
   gap: 0.12rem;
   padding: 0.58rem 0.72rem;
   border-radius: 10px;
-  background: var(--pure-white);
-  border: 1px solid rgba(19, 80, 56, 0.13);
-  box-shadow: 0 4px 12px -10px rgba(11, 51, 34, 0.22);
+  background: rgba(22, 138, 89, 0.07);
 }
 
 .recognition-card--oss .recognition-kpi {
-  border-color: rgba(217, 119, 6, 0.22);
-  background: linear-gradient(180deg, #ffffff 0%, #fffbf2 100%);
+  background: rgba(245, 158, 11, 0.09);
 }
 
 .recognition-kpi-val {
