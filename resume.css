@@ -364,6 +364,22 @@
   gap: 0.45rem;
 }
 
+@media (min-width: 560px) {
+  .impact-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 5;
+    row-gap: 0.38rem;
+    align-items: start;
+  }
+
+  .impact-viz {
+    margin-top: 0;
+    align-self: stretch;
+    justify-content: center;
+  }
+}
+
 .viz-release-grid {
   display: grid;
   grid-template-columns: repeat(18, minmax(0, 1fr));
@@ -1677,6 +1693,11 @@
     color: #111827 !important;
   }
 
+  .impact-card {
+    display: flex !important;
+    grid-row: auto !important;
+  }
+
   .impact-card,
   .exp-card,
   .exp-card > .exp-tags {
@@ -1686,7 +1707,8 @@
     box-shadow: none !important;
   }
 
-  .exp-card::before {
+  .exp-card::before,
+  .tshape-compact-col--depth::after {
     display: none !important;
   }
 
