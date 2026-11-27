@@ -513,6 +513,38 @@ button {
   color: #3ddc84;
 }
 
+.meta-pill--combined {
+  gap: 0.65rem;
+  padding: 0.28rem 0.65rem 0.28rem 0.78rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.meta-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.meta-divider {
+  width: 1px;
+  height: 1rem;
+  background: rgba(255, 255, 255, 0.24);
+  flex-shrink: 0;
+}
+
+.meta-pill--combined .flag-group {
+  min-height: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+.meta-pill--combined .flag-group-label {
+  padding-left: 0;
+}
+
 .flag-group {
   display: inline-flex;
   align-items: center;
